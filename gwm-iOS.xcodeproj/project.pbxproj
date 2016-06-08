@@ -1,0 +1,687 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17CE2B3FFC955846EA2FE486 /* Pods_gwm_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B168A74142EFA54E337ABEB /* Pods_gwm_iOS.framework */; };
+		34EA313CD94A19147575010C /* Pods_gwm_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920D39FB8659DC1C7D65ECF7 /* Pods_gwm_iOSTests.framework */; };
+		D532251E1D07CB9900486B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532251D1D07CB9900486B09 /* AppDelegate.swift */; };
+		D53225201D07CB9900486B09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532251F1D07CB9900486B09 /* ViewController.swift */; };
+		D53225231D07CB9900486B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D53225211D07CB9900486B09 /* Main.storyboard */; };
+		D53225251D07CB9900486B09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53225241D07CB9900486B09 /* Assets.xcassets */; };
+		D53225281D07CB9900486B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D53225261D07CB9900486B09 /* LaunchScreen.storyboard */; };
+		D53225331D07CB9900486B09 /* gwm_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53225321D07CB9900486B09 /* gwm_iOSTests.swift */; };
+		D532253E1D07CB9900486B09 /* gwm_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532253D1D07CB9900486B09 /* gwm_iOSUITests.swift */; };
+		DA675FFA0645D141ECEBC4E4 /* Pods_gwm_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7E69285ABA6D9074D5AC06 /* Pods_gwm_iOSUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D532252F1D07CB9900486B09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D53225121D07CB9900486B09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D53225191D07CB9900486B09;
+			remoteInfo = "gwm-iOS";
+		};
+		D532253A1D07CB9900486B09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D53225121D07CB9900486B09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D53225191D07CB9900486B09;
+			remoteInfo = "gwm-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19FE02F06CE6F58FF6169E88 /* Pods-gwm-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOSTests/Pods-gwm-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A7F00754FC1B12FE625516C /* Pods-gwm-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOS/Pods-gwm-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		503E3CD8A3144716632106BA /* Pods-gwm-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOSUITests/Pods-gwm-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B168A74142EFA54E337ABEB /* Pods_gwm_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gwm_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		920D39FB8659DC1C7D65ECF7 /* Pods_gwm_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gwm_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A60F0C6E80B5B2C8E2734E2 /* Pods-gwm-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOS/Pods-gwm-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BD5C95A5CB3F9EB94E1A4AE1 /* Pods-gwm-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOSUITests/Pods-gwm-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D532251A1D07CB9900486B09 /* gwm-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gwm-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D532251D1D07CB9900486B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D532251F1D07CB9900486B09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D53225221D07CB9900486B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D53225241D07CB9900486B09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D53225271D07CB9900486B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D53225291D07CB9900486B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D532252E1D07CB9900486B09 /* gwm-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gwm-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D53225321D07CB9900486B09 /* gwm_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gwm_iOSTests.swift; sourceTree = "<group>"; };
+		D53225341D07CB9900486B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D53225391D07CB9900486B09 /* gwm-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gwm-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D532253D1D07CB9900486B09 /* gwm_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gwm_iOSUITests.swift; sourceTree = "<group>"; };
+		D532253F1D07CB9900486B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA7E69285ABA6D9074D5AC06 /* Pods_gwm_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gwm_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1EF52AC212836443795A40E /* Pods-gwm-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOSTests/Pods-gwm-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D53225171D07CB9900486B09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17CE2B3FFC955846EA2FE486 /* Pods_gwm_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D532252B1D07CB9900486B09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34EA313CD94A19147575010C /* Pods_gwm_iOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D53225361D07CB9900486B09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA675FFA0645D141ECEBC4E4 /* Pods_gwm_iOSUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A10A87B27CC942045563D51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B168A74142EFA54E337ABEB /* Pods_gwm_iOS.framework */,
+				920D39FB8659DC1C7D65ECF7 /* Pods_gwm_iOSTests.framework */,
+				DA7E69285ABA6D9074D5AC06 /* Pods_gwm_iOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D53225111D07CB9900486B09 = {
+			isa = PBXGroup;
+			children = (
+				D532251C1D07CB9900486B09 /* gwm-iOS */,
+				D53225311D07CB9900486B09 /* gwm-iOSTests */,
+				D532253C1D07CB9900486B09 /* gwm-iOSUITests */,
+				D532251B1D07CB9900486B09 /* Products */,
+				D8369039A575D14D1D20524A /* Pods */,
+				8A10A87B27CC942045563D51 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D532251B1D07CB9900486B09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D532251A1D07CB9900486B09 /* gwm-iOS.app */,
+				D532252E1D07CB9900486B09 /* gwm-iOSTests.xctest */,
+				D53225391D07CB9900486B09 /* gwm-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D532251C1D07CB9900486B09 /* gwm-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D532251D1D07CB9900486B09 /* AppDelegate.swift */,
+				D532251F1D07CB9900486B09 /* ViewController.swift */,
+				D53225211D07CB9900486B09 /* Main.storyboard */,
+				D53225241D07CB9900486B09 /* Assets.xcassets */,
+				D53225261D07CB9900486B09 /* LaunchScreen.storyboard */,
+				D53225291D07CB9900486B09 /* Info.plist */,
+			);
+			path = "gwm-iOS";
+			sourceTree = "<group>";
+		};
+		D53225311D07CB9900486B09 /* gwm-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				D53225321D07CB9900486B09 /* gwm_iOSTests.swift */,
+				D53225341D07CB9900486B09 /* Info.plist */,
+			);
+			path = "gwm-iOSTests";
+			sourceTree = "<group>";
+		};
+		D532253C1D07CB9900486B09 /* gwm-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D532253D1D07CB9900486B09 /* gwm_iOSUITests.swift */,
+				D532253F1D07CB9900486B09 /* Info.plist */,
+			);
+			path = "gwm-iOSUITests";
+			sourceTree = "<group>";
+		};
+		D8369039A575D14D1D20524A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A60F0C6E80B5B2C8E2734E2 /* Pods-gwm-iOS.debug.xcconfig */,
+				4A7F00754FC1B12FE625516C /* Pods-gwm-iOS.release.xcconfig */,
+				19FE02F06CE6F58FF6169E88 /* Pods-gwm-iOSTests.debug.xcconfig */,
+				F1EF52AC212836443795A40E /* Pods-gwm-iOSTests.release.xcconfig */,
+				503E3CD8A3144716632106BA /* Pods-gwm-iOSUITests.debug.xcconfig */,
+				BD5C95A5CB3F9EB94E1A4AE1 /* Pods-gwm-iOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D53225191D07CB9900486B09 /* gwm-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D53225421D07CB9900486B09 /* Build configuration list for PBXNativeTarget "gwm-iOS" */;
+			buildPhases = (
+				79B7E59FC6F2274077CB73C1 /* 📦 Check Pods Manifest.lock */,
+				D53225161D07CB9900486B09 /* Sources */,
+				D53225171D07CB9900486B09 /* Frameworks */,
+				D53225181D07CB9900486B09 /* Resources */,
+				0E0525CB226BFBA4CA0BC412 /* 📦 Embed Pods Frameworks */,
+				C8B98EBE3298048E622B9ACE /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "gwm-iOS";
+			productName = "gwm-iOS";
+			productReference = D532251A1D07CB9900486B09 /* gwm-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D532252D1D07CB9900486B09 /* gwm-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D53225451D07CB9900486B09 /* Build configuration list for PBXNativeTarget "gwm-iOSTests" */;
+			buildPhases = (
+				3BAE5C4C1B67EA2FA5715C02 /* 📦 Check Pods Manifest.lock */,
+				D532252A1D07CB9900486B09 /* Sources */,
+				D532252B1D07CB9900486B09 /* Frameworks */,
+				D532252C1D07CB9900486B09 /* Resources */,
+				8E3FF08E510389417D092C56 /* 📦 Embed Pods Frameworks */,
+				4A92DEA6D71AA323FBDD9723 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D53225301D07CB9900486B09 /* PBXTargetDependency */,
+			);
+			name = "gwm-iOSTests";
+			productName = "gwm-iOSTests";
+			productReference = D532252E1D07CB9900486B09 /* gwm-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D53225381D07CB9900486B09 /* gwm-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D53225481D07CB9900486B09 /* Build configuration list for PBXNativeTarget "gwm-iOSUITests" */;
+			buildPhases = (
+				9B28A381B8A76CB2A1F14C78 /* 📦 Check Pods Manifest.lock */,
+				D53225351D07CB9900486B09 /* Sources */,
+				D53225361D07CB9900486B09 /* Frameworks */,
+				D53225371D07CB9900486B09 /* Resources */,
+				78C1A99508BBA066CD5C48FE /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D532253B1D07CB9900486B09 /* PBXTargetDependency */,
+			);
+			name = "gwm-iOSUITests";
+			productName = "gwm-iOSUITests";
+			productReference = D53225391D07CB9900486B09 /* gwm-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D53225121D07CB9900486B09 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Kii;
+				TargetAttributes = {
+					D53225191D07CB9900486B09 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					D532252D1D07CB9900486B09 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = D53225191D07CB9900486B09;
+					};
+					D53225381D07CB9900486B09 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = D53225191D07CB9900486B09;
+					};
+				};
+			};
+			buildConfigurationList = D53225151D07CB9900486B09 /* Build configuration list for PBXProject "gwm-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D53225111D07CB9900486B09;
+			productRefGroup = D532251B1D07CB9900486B09 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D53225191D07CB9900486B09 /* gwm-iOS */,
+				D532252D1D07CB9900486B09 /* gwm-iOSTests */,
+				D53225381D07CB9900486B09 /* gwm-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D53225181D07CB9900486B09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D53225281D07CB9900486B09 /* LaunchScreen.storyboard in Resources */,
+				D53225251D07CB9900486B09 /* Assets.xcassets in Resources */,
+				D53225231D07CB9900486B09 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D532252C1D07CB9900486B09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D53225371D07CB9900486B09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E0525CB226BFBA4CA0BC412 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gwm-iOS/Pods-gwm-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BAE5C4C1B67EA2FA5715C02 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A92DEA6D71AA323FBDD9723 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gwm-iOSTests/Pods-gwm-iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78C1A99508BBA066CD5C48FE /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gwm-iOSUITests/Pods-gwm-iOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79B7E59FC6F2274077CB73C1 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8E3FF08E510389417D092C56 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gwm-iOSTests/Pods-gwm-iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B28A381B8A76CB2A1F14C78 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C8B98EBE3298048E622B9ACE /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gwm-iOS/Pods-gwm-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D53225161D07CB9900486B09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D53225201D07CB9900486B09 /* ViewController.swift in Sources */,
+				D532251E1D07CB9900486B09 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D532252A1D07CB9900486B09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D53225331D07CB9900486B09 /* gwm_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D53225351D07CB9900486B09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D532253E1D07CB9900486B09 /* gwm_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D53225301D07CB9900486B09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D53225191D07CB9900486B09 /* gwm-iOS */;
+			targetProxy = D532252F1D07CB9900486B09 /* PBXContainerItemProxy */;
+		};
+		D532253B1D07CB9900486B09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D53225191D07CB9900486B09 /* gwm-iOS */;
+			targetProxy = D532253A1D07CB9900486B09 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D53225211D07CB9900486B09 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D53225221D07CB9900486B09 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D53225261D07CB9900486B09 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D53225271D07CB9900486B09 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D53225401D07CB9900486B09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D53225411D07CB9900486B09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D53225431D07CB9900486B09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A60F0C6E80B5B2C8E2734E2 /* Pods-gwm-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "gwm-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Kii.iot.gwm-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D53225441D07CB9900486B09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A7F00754FC1B12FE625516C /* Pods-gwm-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "gwm-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Kii.iot.gwm-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D53225461D07CB9900486B09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FE02F06CE6F58FF6169E88 /* Pods-gwm-iOSTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "gwm-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Kii.iot.gwm-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gwm-iOS.app/gwm-iOS";
+			};
+			name = Debug;
+		};
+		D53225471D07CB9900486B09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1EF52AC212836443795A40E /* Pods-gwm-iOSTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "gwm-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Kii.iot.gwm-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gwm-iOS.app/gwm-iOS";
+			};
+			name = Release;
+		};
+		D53225491D07CB9900486B09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 503E3CD8A3144716632106BA /* Pods-gwm-iOSUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "gwm-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Kii.iot.gwm-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "gwm-iOS";
+			};
+			name = Debug;
+		};
+		D532254A1D07CB9900486B09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD5C95A5CB3F9EB94E1A4AE1 /* Pods-gwm-iOSUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "gwm-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Kii.iot.gwm-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "gwm-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D53225151D07CB9900486B09 /* Build configuration list for PBXProject "gwm-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D53225401D07CB9900486B09 /* Debug */,
+				D53225411D07CB9900486B09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D53225421D07CB9900486B09 /* Build configuration list for PBXNativeTarget "gwm-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D53225431D07CB9900486B09 /* Debug */,
+				D53225441D07CB9900486B09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D53225451D07CB9900486B09 /* Build configuration list for PBXNativeTarget "gwm-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D53225461D07CB9900486B09 /* Debug */,
+				D53225471D07CB9900486B09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D53225481D07CB9900486B09 /* Build configuration list for PBXNativeTarget "gwm-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D53225491D07CB9900486B09 /* Debug */,
+				D532254A1D07CB9900486B09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D53225121D07CB9900486B09 /* Project object */;
+}
