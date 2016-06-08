@@ -1,0 +1,4 @@
+//TODO: implementation
+class LightState {
+
+}

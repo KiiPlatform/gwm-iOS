@@ -16,6 +16,16 @@
 		D53225281D07CB9900486B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D53225261D07CB9900486B09 /* LaunchScreen.storyboard */; };
 		D53225331D07CB9900486B09 /* gwm_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53225321D07CB9900486B09 /* gwm_iOSTests.swift */; };
 		D532253E1D07CB9900486B09 /* gwm_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532253D1D07CB9900486B09 /* gwm_iOSUITests.swift */; };
+		D57663331D07F5970016B374 /* ApiBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57663291D07F5970016B374 /* ApiBuilder.swift */; };
+		D57663341D07F5970016B374 /* LightState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576632A1D07F5970016B374 /* LightState.swift */; };
+		D57663351D07F5970016B374 /* SetBrightnessAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576632B1D07F5970016B374 /* SetBrightnessAction.swift */; };
+		D57663361D07F5970016B374 /* SetBrightnessActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576632C1D07F5970016B374 /* SetBrightnessActionResult.swift */; };
+		D57663371D07F5970016B374 /* SetColorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576632D1D07F5970016B374 /* SetColorAction.swift */; };
+		D57663381D07F5970016B374 /* SetColorActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576632E1D07F5970016B374 /* SetColorActionResult.swift */; };
+		D57663391D07F5970016B374 /* SetColorTempratureAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576632F1D07F5970016B374 /* SetColorTempratureAction.swift */; };
+		D576633A1D07F5970016B374 /* SetColorTempratureActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57663301D07F5970016B374 /* SetColorTempratureActionResult.swift */; };
+		D576633B1D07F5970016B374 /* TurnPowerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57663311D07F5970016B374 /* TurnPowerAction.swift */; };
+		D576633C1D07F5970016B374 /* TurnPowerActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57663321D07F5970016B374 /* TurnPowerActionResult.swift */; };
 		DA675FFA0645D141ECEBC4E4 /* Pods_gwm_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7E69285ABA6D9074D5AC06 /* Pods_gwm_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +67,17 @@
 		D53225391D07CB9900486B09 /* gwm-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gwm-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D532253D1D07CB9900486B09 /* gwm_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gwm_iOSUITests.swift; sourceTree = "<group>"; };
 		D532253F1D07CB9900486B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D57663291D07F5970016B374 /* ApiBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiBuilder.swift; sourceTree = "<group>"; };
+		D576632A1D07F5970016B374 /* LightState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightState.swift; sourceTree = "<group>"; };
+		D576632B1D07F5970016B374 /* SetBrightnessAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBrightnessAction.swift; sourceTree = "<group>"; };
+		D576632C1D07F5970016B374 /* SetBrightnessActionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBrightnessActionResult.swift; sourceTree = "<group>"; };
+		D576632D1D07F5970016B374 /* SetColorAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetColorAction.swift; sourceTree = "<group>"; };
+		D576632E1D07F5970016B374 /* SetColorActionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetColorActionResult.swift; sourceTree = "<group>"; };
+		D576632F1D07F5970016B374 /* SetColorTempratureAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetColorTempratureAction.swift; sourceTree = "<group>"; };
+		D57663301D07F5970016B374 /* SetColorTempratureActionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetColorTempratureActionResult.swift; sourceTree = "<group>"; };
+		D57663311D07F5970016B374 /* TurnPowerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnPowerAction.swift; sourceTree = "<group>"; };
+		D57663321D07F5970016B374 /* TurnPowerActionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnPowerActionResult.swift; sourceTree = "<group>"; };
+		D576633D1D07F8D40016B374 /* gwm-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gwm-iOS-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		DA7E69285ABA6D9074D5AC06 /* Pods_gwm_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gwm_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EF52AC212836443795A40E /* Pods-gwm-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOSTests/Pods-gwm-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,8 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				D532251D1D07CB9900486B09 /* AppDelegate.swift */,
+				D57663281D07F5970016B374 /* model */,
 				D532251F1D07CB9900486B09 /* ViewController.swift */,
 				D53225211D07CB9900486B09 /* Main.storyboard */,
+				D576633D1D07F8D40016B374 /* gwm-iOS-Bridging-Header.h */,
 				D53225241D07CB9900486B09 /* Assets.xcassets */,
 				D53225261D07CB9900486B09 /* LaunchScreen.storyboard */,
 				D53225291D07CB9900486B09 /* Info.plist */,
@@ -150,6 +173,23 @@
 				D532253F1D07CB9900486B09 /* Info.plist */,
 			);
 			path = "gwm-iOSUITests";
+			sourceTree = "<group>";
+		};
+		D57663281D07F5970016B374 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D57663291D07F5970016B374 /* ApiBuilder.swift */,
+				D576632A1D07F5970016B374 /* LightState.swift */,
+				D576632B1D07F5970016B374 /* SetBrightnessAction.swift */,
+				D576632C1D07F5970016B374 /* SetBrightnessActionResult.swift */,
+				D576632D1D07F5970016B374 /* SetColorAction.swift */,
+				D576632E1D07F5970016B374 /* SetColorActionResult.swift */,
+				D576632F1D07F5970016B374 /* SetColorTempratureAction.swift */,
+				D57663301D07F5970016B374 /* SetColorTempratureActionResult.swift */,
+				D57663311D07F5970016B374 /* TurnPowerAction.swift */,
+				D57663321D07F5970016B374 /* TurnPowerActionResult.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		D8369039A575D14D1D20524A /* Pods */ = {
@@ -427,6 +467,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D57663391D07F5970016B374 /* SetColorTempratureAction.swift in Sources */,
+				D57663351D07F5970016B374 /* SetBrightnessAction.swift in Sources */,
+				D576633A1D07F5970016B374 /* SetColorTempratureActionResult.swift in Sources */,
+				D57663371D07F5970016B374 /* SetColorAction.swift in Sources */,
+				D576633B1D07F5970016B374 /* TurnPowerAction.swift in Sources */,
+				D576633C1D07F5970016B374 /* TurnPowerActionResult.swift in Sources */,
+				D57663341D07F5970016B374 /* LightState.swift in Sources */,
+				D57663361D07F5970016B374 /* SetBrightnessActionResult.swift in Sources */,
+				D57663331D07F5970016B374 /* ApiBuilder.swift in Sources */,
+				D57663381D07F5970016B374 /* SetColorActionResult.swift in Sources */,
 				D53225201D07CB9900486B09 /* ViewController.swift in Sources */,
 				D532251E1D07CB9900486B09 /* AppDelegate.swift in Sources */,
 			);
@@ -571,11 +621,14 @@
 			baseConfigurationReference = 9A60F0C6E80B5B2C8E2734E2 /* Pods-gwm-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "gwm-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Kii.iot.gwm-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "gwm-iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -584,11 +637,13 @@
 			baseConfigurationReference = 4A7F00754FC1B12FE625516C /* Pods-gwm-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "gwm-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Kii.iot.gwm-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "gwm-iOS-Bridging-Header.h";
 			};
 			name = Release;
 		};
