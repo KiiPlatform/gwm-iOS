@@ -1,3 +1,0 @@
-//TODO: implementation
-class SetColorActionResult {
-}

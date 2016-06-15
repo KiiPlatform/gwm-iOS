@@ -6,7 +6,7 @@ class ApiBuilder {
     static let SCHEMA_NAME = "Smart-Light-Demo"
     static let SCHEMA_VERSION = 1
 
-    class func buildApi (owner : KiiUser){
+    class func buildApi (owner : KiiUser) -> ThingIFAPI{
 
         let appId = ""
         let appKey = ""
@@ -28,11 +28,7 @@ class ApiBuilder {
         }
         let app = App(appID: appId, appKey: appKey, site: site)
         let builder = ThingIFAPIBuilder(app: app, owner: Owner(typedID: TypedID(type: "user", id: owner.userID!), accessToken: owner.accessToken!))
-        
-
-
-
-
+        return builder.build()
     }
 
 }

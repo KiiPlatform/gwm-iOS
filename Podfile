@@ -3,14 +3,16 @@ inhibit_all_warnings!
 platform :ios, '8.0'
 use_frameworks!
 
-target 'gwm-iOS' do
+target 'gateway' do
   pod 'KiiCloud'
   pod 'ThingIFSDK'
+  pod 'Toast-Swift', '~> 1.3.0'
+  pod 'Material', '~> 1.42.1'
+end
 
-  target "gwm-iOSTests" do
-    inherit! :search_paths
-  end
-  target "gwm-iOSUITests" do
-    inherit! :search_paths
-  end
+target 'endnode' do
+  pod 'KiiCloud'
+  pod 'ThingIFSDK'
+  pod 'Toast-Swift', '~> 1.3.0'
+  pod 'Material', '~> 1.42.1'
 end

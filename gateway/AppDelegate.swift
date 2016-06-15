@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  gwm-iOS
+//  gateway
 //
-//  Created by syahRiza on 6/8/16.
+//  Created by syahRiza on 6/15/16.
 //  Copyright © 2016 Kii. All rights reserved.
 //
 
