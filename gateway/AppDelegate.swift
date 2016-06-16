@@ -15,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        NSUserDefaults.standardUserDefaults().setObject("Gateway", forKey: APP_NAME)
+         NSUserDefaults.standardUserDefaults().setObject("c8e970a9", forKey: APP_ID)
+         NSUserDefaults.standardUserDefaults().setObject("d59ac1235c57875436f8b396d190fff7", forKey: APP_KEY)
+        NSUserDefaults.standardUserDefaults().synchronize()
         return true
     }
 
