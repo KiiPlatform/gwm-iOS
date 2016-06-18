@@ -17,6 +17,39 @@ class WizardVC: UIViewController, TextFieldDelegate {
         Manager.SharedManager.currentVC = self
 
     }
+
+
+    /// Executed when the 'return' key is pressed when using the emailField.
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        (textField as? ErrorTextField)?.revealError = true
+        return true
+    }
+
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldDidBeginEditing(textField: UITextField) {
+    }
+
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldDidEndEditing(textField: UITextField) {
+        (textField as? ErrorTextField)?.revealError = false
+    }
+
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        (textField as? ErrorTextField)?.revealError = false
+        return true
+    }
+
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        (textField as? ErrorTextField)?.revealError = false
+        return true
+    }
+
 }
 extension UIViewController {
     func canPerformSegueWithIdentifier(identifier: NSString) -> Bool {

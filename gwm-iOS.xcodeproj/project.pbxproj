@@ -33,6 +33,14 @@
 		D5E1E1591D111CB800BE8CD7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1581D111CB800BE8CD7 /* MainViewController.swift */; };
 		D5E1E1651D113B8000BE8CD7 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1641D113B8000BE8CD7 /* Manager.swift */; };
 		D5E1E1661D113B8000BE8CD7 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1641D113B8000BE8CD7 /* Manager.swift */; };
+		D5E1E1681D123E2F00BE8CD7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1671D123E2F00BE8CD7 /* LoginViewController.swift */; };
+		D5E1E1691D123E2F00BE8CD7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1671D123E2F00BE8CD7 /* LoginViewController.swift */; };
+		D5E1E16B1D12967600BE8CD7 /* GatewayConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E16A1D12967600BE8CD7 /* GatewayConnectViewController.swift */; };
+		D5E1E16C1D12967600BE8CD7 /* GatewayConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E16A1D12967600BE8CD7 /* GatewayConnectViewController.swift */; };
+		D5E1E1711D13989C00BE8CD7 /* GatewayPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1701D13989C00BE8CD7 /* GatewayPasswordViewController.swift */; };
+		D5E1E1721D13989C00BE8CD7 /* GatewayPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1701D13989C00BE8CD7 /* GatewayPasswordViewController.swift */; };
+		D5E1E1741D13B42100BE8CD7 /* NodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1731D13B42100BE8CD7 /* NodesViewController.swift */; };
+		D5E1E1751D13B42100BE8CD7 /* NodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1731D13B42100BE8CD7 /* NodesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +78,10 @@
 		D5E1E1411D10FC7D00BE8CD7 /* TurnPower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnPower.swift; sourceTree = "<group>"; };
 		D5E1E1581D111CB800BE8CD7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ui/MainViewController.swift; sourceTree = "<group>"; };
 		D5E1E1641D113B8000BE8CD7 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = core/Manager.swift; sourceTree = "<group>"; };
+		D5E1E1671D123E2F00BE8CD7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ui/LoginViewController.swift; sourceTree = "<group>"; };
+		D5E1E16A1D12967600BE8CD7 /* GatewayConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GatewayConnectViewController.swift; path = ui/GatewayConnectViewController.swift; sourceTree = "<group>"; };
+		D5E1E1701D13989C00BE8CD7 /* GatewayPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GatewayPasswordViewController.swift; path = ui/GatewayPasswordViewController.swift; sourceTree = "<group>"; };
+		D5E1E1731D13B42100BE8CD7 /* NodesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NodesViewController.swift; path = ui/NodesViewController.swift; sourceTree = "<group>"; };
 		DA7E69285ABA6D9074D5AC06 /* Pods_gwm_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gwm_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8EC86B6DC94F455EA0FA41A /* Pods_endnode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_endnode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EF52AC212836443795A40E /* Pods-gwm-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOSTests/Pods-gwm-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +185,10 @@
 			isa = PBXGroup;
 			children = (
 				D5E1E1581D111CB800BE8CD7 /* MainViewController.swift */,
+				D5E1E1671D123E2F00BE8CD7 /* LoginViewController.swift */,
+				D5E1E16A1D12967600BE8CD7 /* GatewayConnectViewController.swift */,
+				D5E1E1701D13989C00BE8CD7 /* GatewayPasswordViewController.swift */,
+				D5E1E1731D13B42100BE8CD7 /* NodesViewController.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -405,14 +421,18 @@
 			files = (
 				D5E1E14C1D10FC7D00BE8CD7 /* TurnPower.swift in Sources */,
 				D5E1E1441D10FC7D00BE8CD7 /* Brightness.swift in Sources */,
+				D5E1E1711D13989C00BE8CD7 /* GatewayPasswordViewController.swift in Sources */,
 				D5E1E1421D10FC7D00BE8CD7 /* ApiBuilder.swift in Sources */,
 				D5E1E1481D10FC7D00BE8CD7 /* ColorTemprature.swift in Sources */,
 				D5E1E14A1D10FC7D00BE8CD7 /* LightState.swift in Sources */,
+				D5E1E1741D13B42100BE8CD7 /* NodesViewController.swift in Sources */,
 				D5E1E1061D10F2A000BE8CD7 /* ViewController.swift in Sources */,
 				D5E1E1591D111CB800BE8CD7 /* MainViewController.swift in Sources */,
 				D5E1E1461D10FC7D00BE8CD7 /* Color.swift in Sources */,
+				D5E1E16B1D12967600BE8CD7 /* GatewayConnectViewController.swift in Sources */,
 				D5E1E1041D10F2A000BE8CD7 /* AppDelegate.swift in Sources */,
 				D5E1E1651D113B8000BE8CD7 /* Manager.swift in Sources */,
+				D5E1E1681D123E2F00BE8CD7 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,12 +440,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E1E1691D123E2F00BE8CD7 /* LoginViewController.swift in Sources */,
 				D5E1E14D1D10FC7D00BE8CD7 /* TurnPower.swift in Sources */,
+				D5E1E16C1D12967600BE8CD7 /* GatewayConnectViewController.swift in Sources */,
 				D5E1E1451D10FC7D00BE8CD7 /* Brightness.swift in Sources */,
 				D5E1E1431D10FC7D00BE8CD7 /* ApiBuilder.swift in Sources */,
 				D5E1E1661D113B8000BE8CD7 /* Manager.swift in Sources */,
 				D5E1E1491D10FC7D00BE8CD7 /* ColorTemprature.swift in Sources */,
 				D5E1E14B1D10FC7D00BE8CD7 /* LightState.swift in Sources */,
+				D5E1E1751D13B42100BE8CD7 /* NodesViewController.swift in Sources */,
+				D5E1E1721D13989C00BE8CD7 /* GatewayPasswordViewController.swift in Sources */,
 				D5E1E1471D10FC7D00BE8CD7 /* Color.swift in Sources */,
 				D5E1E11A1D10F2B600BE8CD7 /* AppDelegate.swift in Sources */,
 			);

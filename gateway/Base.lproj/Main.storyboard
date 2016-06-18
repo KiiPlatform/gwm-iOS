@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="244.5" y="312.5"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Nodes View Controller-->
         <scene sceneID="FGf-h2-5zU">
             <objects>
-                <viewController restorationIdentifier="next" id="YBy-CI-rqi" customClass="MainViewController" customModule="gateway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="next" id="YBy-CI-rqi" customClass="NodesViewController" customModule="gateway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GLF-6m-DzM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

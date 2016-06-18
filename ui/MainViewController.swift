@@ -18,6 +18,7 @@ final class MainViewController: WizardVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "\(Manager.SharedManager.appName) app Setting"
         prepareView()
         prepareKiiSite()
         prepareAppIDField()
@@ -89,37 +90,6 @@ final class MainViewController: WizardVC {
         // Size the TextField to the maximum width, less 40 pixels on either side
         // with a top margin of 200 pixels.
         view.layout(appKeyField).top(300).horizontally(left: 40, right: 40)
-    }
-
-    /// Executed when the 'return' key is pressed when using the emailField.
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        (textField as? ErrorTextField)?.revealError = true
-        return true
-    }
-
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        return true
-    }
-
-    func textFieldDidBeginEditing(textField: UITextField) {
-    }
-
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        return true
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        (textField as? ErrorTextField)?.revealError = false
-    }
-    
-    func textFieldShouldClear(textField: UITextField) -> Bool {
-        (textField as? ErrorTextField)?.revealError = false
-        return true
-    }
-    
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        (textField as? ErrorTextField)?.revealError = false
-        return true
     }
 
     
