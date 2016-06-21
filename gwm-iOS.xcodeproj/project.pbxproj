@@ -9,8 +9,13 @@
 /* Begin PBXBuildFile section */
 		5ECCB0FB9DFCE47984BE9A18 /* Pods_gateway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5CDB66C958B1ECE0967894 /* Pods_gateway.framework */; };
 		70812EA447DCC91540491677 /* Pods_endnode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EC86B6DC94F455EA0FA41A /* Pods_endnode.framework */; };
+		D5C5FF7A1D17D13C00A5D300 /* GatewayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C5FF791D17D13C00A5D300 /* GatewayViewController.swift */; };
+		D5C5FF7C1D18CD9B00A5D300 /* NodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C5FF7B1D18CD9B00A5D300 /* NodesViewController.swift */; };
+		D5C5FF7E1D18CFFA00A5D300 /* WizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C5FF7D1D18CFFA00A5D300 /* WizardViewController.swift */; };
+		D5C5FF7F1D18CFFA00A5D300 /* WizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C5FF7D1D18CFFA00A5D300 /* WizardViewController.swift */; };
+		D5C5FF811D18D17900A5D300 /* Wizard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C5FF801D18D17900A5D300 /* Wizard.storyboard */; };
+		D5C5FF821D18D17900A5D300 /* Wizard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C5FF801D18D17900A5D300 /* Wizard.storyboard */; };
 		D5E1E1041D10F2A000BE8CD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1031D10F2A000BE8CD7 /* AppDelegate.swift */; };
-		D5E1E1061D10F2A000BE8CD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1051D10F2A000BE8CD7 /* ViewController.swift */; };
 		D5E1E1091D10F2A000BE8CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5E1E1071D10F2A000BE8CD7 /* Main.storyboard */; };
 		D5E1E10B1D10F2A000BE8CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5E1E10A1D10F2A000BE8CD7 /* Assets.xcassets */; };
 		D5E1E10E1D10F2A000BE8CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5E1E10C1D10F2A000BE8CD7 /* LaunchScreen.storyboard */; };
@@ -30,7 +35,7 @@
 		D5E1E14B1D10FC7D00BE8CD7 /* LightState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1401D10FC7D00BE8CD7 /* LightState.swift */; };
 		D5E1E14C1D10FC7D00BE8CD7 /* TurnPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1411D10FC7D00BE8CD7 /* TurnPower.swift */; };
 		D5E1E14D1D10FC7D00BE8CD7 /* TurnPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1411D10FC7D00BE8CD7 /* TurnPower.swift */; };
-		D5E1E1591D111CB800BE8CD7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1581D111CB800BE8CD7 /* MainViewController.swift */; };
+		D5E1E1591D111CB800BE8CD7 /* KiiInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1581D111CB800BE8CD7 /* KiiInitialViewController.swift */; };
 		D5E1E1651D113B8000BE8CD7 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1641D113B8000BE8CD7 /* Manager.swift */; };
 		D5E1E1661D113B8000BE8CD7 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1641D113B8000BE8CD7 /* Manager.swift */; };
 		D5E1E1681D123E2F00BE8CD7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1671D123E2F00BE8CD7 /* LoginViewController.swift */; };
@@ -39,8 +44,6 @@
 		D5E1E16C1D12967600BE8CD7 /* GatewayConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E16A1D12967600BE8CD7 /* GatewayConnectViewController.swift */; };
 		D5E1E1711D13989C00BE8CD7 /* GatewayPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1701D13989C00BE8CD7 /* GatewayPasswordViewController.swift */; };
 		D5E1E1721D13989C00BE8CD7 /* GatewayPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1701D13989C00BE8CD7 /* GatewayPasswordViewController.swift */; };
-		D5E1E1741D13B42100BE8CD7 /* NodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1731D13B42100BE8CD7 /* NodesViewController.swift */; };
-		D5E1E1751D13B42100BE8CD7 /* NodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1731D13B42100BE8CD7 /* NodesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,9 +59,12 @@
 		920D39FB8659DC1C7D65ECF7 /* Pods_gwm_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gwm_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A60F0C6E80B5B2C8E2734E2 /* Pods-gwm-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOS/Pods-gwm-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BD5C95A5CB3F9EB94E1A4AE1 /* Pods-gwm-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOSUITests/Pods-gwm-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D5C5FF791D17D13C00A5D300 /* GatewayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayViewController.swift; sourceTree = "<group>"; };
+		D5C5FF7B1D18CD9B00A5D300 /* NodesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodesViewController.swift; sourceTree = "<group>"; };
+		D5C5FF7D1D18CFFA00A5D300 /* WizardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WizardViewController.swift; path = ui/WizardViewController.swift; sourceTree = "<group>"; };
+		D5C5FF801D18D17900A5D300 /* Wizard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Wizard.storyboard; path = ui/Wizard.storyboard; sourceTree = SOURCE_ROOT; };
 		D5E1E1011D10F29F00BE8CD7 /* gateway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gateway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E1E1031D10F2A000BE8CD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5E1E1051D10F2A000BE8CD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D5E1E1081D10F2A000BE8CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5E1E10A1D10F2A000BE8CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5E1E10D1D10F2A000BE8CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,12 +82,11 @@
 		D5E1E13F1D10FC7D00BE8CD7 /* ColorTemprature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTemprature.swift; sourceTree = "<group>"; };
 		D5E1E1401D10FC7D00BE8CD7 /* LightState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightState.swift; sourceTree = "<group>"; };
 		D5E1E1411D10FC7D00BE8CD7 /* TurnPower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnPower.swift; sourceTree = "<group>"; };
-		D5E1E1581D111CB800BE8CD7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ui/MainViewController.swift; sourceTree = "<group>"; };
+		D5E1E1581D111CB800BE8CD7 /* KiiInitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KiiInitialViewController.swift; path = ui/KiiInitialViewController.swift; sourceTree = "<group>"; };
 		D5E1E1641D113B8000BE8CD7 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = core/Manager.swift; sourceTree = "<group>"; };
 		D5E1E1671D123E2F00BE8CD7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ui/LoginViewController.swift; sourceTree = "<group>"; };
 		D5E1E16A1D12967600BE8CD7 /* GatewayConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GatewayConnectViewController.swift; path = ui/GatewayConnectViewController.swift; sourceTree = "<group>"; };
 		D5E1E1701D13989C00BE8CD7 /* GatewayPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GatewayPasswordViewController.swift; path = ui/GatewayPasswordViewController.swift; sourceTree = "<group>"; };
-		D5E1E1731D13B42100BE8CD7 /* NodesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NodesViewController.swift; path = ui/NodesViewController.swift; sourceTree = "<group>"; };
 		DA7E69285ABA6D9074D5AC06 /* Pods_gwm_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gwm_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8EC86B6DC94F455EA0FA41A /* Pods_endnode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_endnode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EF52AC212836443795A40E /* Pods-gwm-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gwm-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-gwm-iOSTests/Pods-gwm-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,11 +152,11 @@
 			isa = PBXGroup;
 			children = (
 				D5E1E1031D10F2A000BE8CD7 /* AppDelegate.swift */,
-				D5E1E1051D10F2A000BE8CD7 /* ViewController.swift */,
 				D5E1E1071D10F2A000BE8CD7 /* Main.storyboard */,
 				D5E1E10A1D10F2A000BE8CD7 /* Assets.xcassets */,
 				D5E1E10C1D10F2A000BE8CD7 /* LaunchScreen.storyboard */,
 				D5E1E10F1D10F2A000BE8CD7 /* Info.plist */,
+				D5C5FF791D17D13C00A5D300 /* GatewayViewController.swift */,
 			);
 			path = gateway;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 		D5E1E1181D10F2B600BE8CD7 /* endnode */ = {
 			isa = PBXGroup;
 			children = (
+				D5C5FF7B1D18CD9B00A5D300 /* NodesViewController.swift */,
 				D5E1E1191D10F2B600BE8CD7 /* AppDelegate.swift */,
 				D5E1E11D1D10F2B600BE8CD7 /* Main.storyboard */,
 				D5E1E1201D10F2B600BE8CD7 /* Assets.xcassets */,
@@ -184,11 +190,12 @@
 		D5E1E1571D11198300BE8CD7 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				D5E1E1581D111CB800BE8CD7 /* MainViewController.swift */,
+				D5C5FF801D18D17900A5D300 /* Wizard.storyboard */,
+				D5E1E1581D111CB800BE8CD7 /* KiiInitialViewController.swift */,
 				D5E1E1671D123E2F00BE8CD7 /* LoginViewController.swift */,
 				D5E1E16A1D12967600BE8CD7 /* GatewayConnectViewController.swift */,
 				D5E1E1701D13989C00BE8CD7 /* GatewayPasswordViewController.swift */,
-				D5E1E1731D13B42100BE8CD7 /* NodesViewController.swift */,
+				D5C5FF7D1D18CFFA00A5D300 /* WizardViewController.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -304,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E1E10E1D10F2A000BE8CD7 /* LaunchScreen.storyboard in Resources */,
+				D5C5FF811D18D17900A5D300 /* Wizard.storyboard in Resources */,
 				D5E1E10B1D10F2A000BE8CD7 /* Assets.xcassets in Resources */,
 				D5E1E1091D10F2A000BE8CD7 /* Main.storyboard in Resources */,
 			);
@@ -314,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E1E1241D10F2B600BE8CD7 /* LaunchScreen.storyboard in Resources */,
+				D5C5FF821D18D17900A5D300 /* Wizard.storyboard in Resources */,
 				D5E1E1211D10F2B600BE8CD7 /* Assets.xcassets in Resources */,
 				D5E1E11F1D10F2B600BE8CD7 /* Main.storyboard in Resources */,
 			);
@@ -425,12 +434,12 @@
 				D5E1E1421D10FC7D00BE8CD7 /* ApiBuilder.swift in Sources */,
 				D5E1E1481D10FC7D00BE8CD7 /* ColorTemprature.swift in Sources */,
 				D5E1E14A1D10FC7D00BE8CD7 /* LightState.swift in Sources */,
-				D5E1E1741D13B42100BE8CD7 /* NodesViewController.swift in Sources */,
-				D5E1E1061D10F2A000BE8CD7 /* ViewController.swift in Sources */,
-				D5E1E1591D111CB800BE8CD7 /* MainViewController.swift in Sources */,
+				D5E1E1591D111CB800BE8CD7 /* KiiInitialViewController.swift in Sources */,
+				D5C5FF7A1D17D13C00A5D300 /* GatewayViewController.swift in Sources */,
 				D5E1E1461D10FC7D00BE8CD7 /* Color.swift in Sources */,
 				D5E1E16B1D12967600BE8CD7 /* GatewayConnectViewController.swift in Sources */,
 				D5E1E1041D10F2A000BE8CD7 /* AppDelegate.swift in Sources */,
+				D5C5FF7E1D18CFFA00A5D300 /* WizardViewController.swift in Sources */,
 				D5E1E1651D113B8000BE8CD7 /* Manager.swift in Sources */,
 				D5E1E1681D123E2F00BE8CD7 /* LoginViewController.swift in Sources */,
 			);
@@ -446,9 +455,10 @@
 				D5E1E1451D10FC7D00BE8CD7 /* Brightness.swift in Sources */,
 				D5E1E1431D10FC7D00BE8CD7 /* ApiBuilder.swift in Sources */,
 				D5E1E1661D113B8000BE8CD7 /* Manager.swift in Sources */,
+				D5C5FF7C1D18CD9B00A5D300 /* NodesViewController.swift in Sources */,
 				D5E1E1491D10FC7D00BE8CD7 /* ColorTemprature.swift in Sources */,
+				D5C5FF7F1D18CFFA00A5D300 /* WizardViewController.swift in Sources */,
 				D5E1E14B1D10FC7D00BE8CD7 /* LightState.swift in Sources */,
-				D5E1E1751D13B42100BE8CD7 /* NodesViewController.swift in Sources */,
 				D5E1E1721D13989C00BE8CD7 /* GatewayPasswordViewController.swift in Sources */,
 				D5E1E1471D10FC7D00BE8CD7 /* Color.swift in Sources */,
 				D5E1E11A1D10F2B600BE8CD7 /* AppDelegate.swift in Sources */,

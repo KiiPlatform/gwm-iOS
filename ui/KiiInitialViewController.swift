@@ -10,7 +10,7 @@ import Material
 
 
 
-final class MainViewController: WizardVC {
+final class KiiInitialViewController: WizardVC {
 
     private var nameField: TextField!
     private var appIDField: ErrorTextField!
@@ -24,6 +24,7 @@ final class MainViewController: WizardVC {
         prepareAppIDField()
         prepareAppKeyField()
 
+
     }
 
     /// Programmatic update for the textField as it rotates.
@@ -35,6 +36,14 @@ final class MainViewController: WizardVC {
     private func prepareView() {
         view.backgroundColor = MaterialColor.white
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        Manager.SharedManager.childWillLoadedAction(prevButton: ButtonProperties(false,nil), nextButton: DEFAULT_NEXT_BUTTON)
+    }
+    override func viewWillDisappear(animated: Bool) {
+        Manager.SharedManager.childWillLoadedAction(prevButton: DEFAULT_PREV_BUTTON, nextButton: DEFAULT_NEXT_BUTTON)
+    }
+
 
 
 

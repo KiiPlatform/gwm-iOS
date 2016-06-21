@@ -139,19 +139,21 @@ extension NodesViewController: UITableViewDataSource {
         cell.detailTextLabel!.textColor = MaterialColor.grey.darken1
         cell.imageView!.image = node.image?.resize(toWidth: 40)
         cell.imageView!.layer.cornerRadius = 20
-        let btn1 = RaisedButton(frame: CGRectMake(0,0,130,40))
-        btn1.pulseColor = MaterialColor.amber.accent2
-        btn1.setTitle(node.type.buttonLabel(), forState: .Normal)
-        btn1.setTitleColor(MaterialColor.blue.accent2, forState: .Normal)
-        cell.accessoryView = btn1
+        let actionButton = RaisedButton(frame: CGRectMake(0,0,130,40))
+        actionButton.pulseColor = MaterialColor.amber.accent2
+        actionButton.setTitle(node.type.buttonLabel(), forState: .Normal)
+        actionButton.setTitleColor(MaterialColor.blue.accent2, forState: .Normal)
+        actionButton.addTarget(self, action: #selector(NodesViewController.nodeAction(_:)), forControlEvents: .TouchUpInside)
+        actionButton.tag = indexPath.row
+        cell.accessoryView = actionButton
 
-        
         return cell
     }
-    @objc private func nodeAction(sender: Int) {
+    @objc private func nodeAction(sender: UIButton) {
+        let node: Node = self.selectedNodes[sender.tag]
+        print(node.text)
 
     }
-
     
 }
 
