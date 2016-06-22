@@ -36,11 +36,13 @@ final class GatewayPasswordViewController : WizardVC {
             }
             var style = ToastStyle()
             style.backgroundColor = MaterialColor.blue.accent2.colorWithAlphaComponent(0.5)
-
+            self?.parentViewController?.view?.makeToastActivity(.Center)
+            
             gatewayApi?.onboardGateway({ (gateway, error) in
                 let success = error == nil
 
                 if !success {
+                    self?.parentViewController?.view?.hideToastActivity()
                     style.messageColor = MaterialColor.red.accent3
                     self?.parentViewController?.view?.makeToast("error : \(error)", duration: 3, position: .Center,style: style)
                     completion(false)
@@ -48,12 +50,24 @@ final class GatewayPasswordViewController : WizardVC {
                 }
 
                 let api = thingIfApi?.copyWithTarget(gateway!)
-                api?.onboard((gateway?.thingID)!, thingPassword: password, completionHandler: { (_, error) in
+                api!.onboard((gateway?.thingID)!, thingPassword: password, completionHandler: { (_, error) in
+                    self?.parentViewController?.view?.hideToastActivity()
+
+
                     let success = error == nil
 
                     if success {
+
                         self?.parentViewController?.view?.makeToast("Sign in Succeded", duration: 1, position: .Bottom,style: style)
                     }else {
+                        switch error! {
+                        case .ALREADY_ONBOARDED :
+                            self?.parentViewController?.view?.makeToast("already onboarded", duration: 1, position: .Bottom,style: style)
+                            completion(true)
+                            return
+                        default :
+                            break
+                        }
                         style.messageColor = MaterialColor.red.accent3
                         self?.parentViewController?.view?.makeToast("error \(error)", duration: 3, position: .Center,style: style)
                     }

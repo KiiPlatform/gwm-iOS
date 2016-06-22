@@ -43,7 +43,7 @@ final class GatewayConnectViewController : WizardVC {
             }
             
             let app = AppBuilder(appID: Manager.SharedManager.appID, appKey: Manager.SharedManager.appKey, hostName: Kii.kiiAppsBaseURL())
-                .setSiteName("JP").setPort(4001).build()
+                .setSiteName(Manager.SharedManager.appSite).setPort(4001).build()
 
 
             let api = GatewayAPIBuilder(app: app, address: NSURL(string: "http://\(ipAddress):\(port)")!).build()

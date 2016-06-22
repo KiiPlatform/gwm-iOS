@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         NSUserDefaults.standardUserDefaults().setObject("Gateway", forKey: APP_NAME)
-         NSUserDefaults.standardUserDefaults().setObject("c8e970a9", forKey: APP_ID)
-         NSUserDefaults.standardUserDefaults().setObject("d59ac1235c57875436f8b396d190fff7", forKey: APP_KEY)
+        NSUserDefaults.standardUserDefaults().setObject("c8e970a9", forKey: APP_ID)
+        NSUserDefaults.standardUserDefaults().setObject("d59ac1235c57875436f8b396d190fff7", forKey: APP_KEY)
         NSUserDefaults.standardUserDefaults().setObject("JP", forKey: APP_SITE)
         NSUserDefaults.standardUserDefaults().synchronize()
         return true
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
 }
 
