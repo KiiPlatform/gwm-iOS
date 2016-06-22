@@ -13,7 +13,7 @@ final class GatewayConnectViewController : WizardVC {
 
     private var ipField : ErrorTextField!
     private var portField : ErrorTextField!
-    private var emailField: ErrorTextField!
+    private var userField: ErrorTextField!
     private var passwordField: TextField!
 
     override func viewDidLoad() {
@@ -21,14 +21,14 @@ final class GatewayConnectViewController : WizardVC {
         self.title = "Connect to Gateway"
         prepareView()
         prepareIPField()
-        prepareEmailField()
+        prepareUserField()
         preparePasswordField()
 
     }
 
     /// Programmatic update for the textField as it rotates.
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        emailField.width = view.bounds.height - 80
+        userField.width = view.bounds.height - 80
     }
 
     /// General preparation statements.
@@ -38,6 +38,7 @@ final class GatewayConnectViewController : WizardVC {
     private func prepareIPField() {
         ipField = ErrorTextField(frame: CGRectMake(40, 90, view.bounds.width - 80, 32))
         ipField.placeholder = "IP Address"
+        ipField.text = "192.168.11.5"
 
         ipField.enableClearIconButton = true
         ipField.delegate = self
@@ -50,6 +51,7 @@ final class GatewayConnectViewController : WizardVC {
 
         portField = ErrorTextField(frame: CGRectMake(40, 160, view.bounds.width - 80, 32))
         portField.placeholder = "Port Number"
+        portField.text = "4001"
 
         portField.enableClearIconButton = true
         portField.delegate = self
@@ -64,24 +66,26 @@ final class GatewayConnectViewController : WizardVC {
 
 
     /// Prepares the email TextField.
-    private func prepareEmailField() {
-        emailField = ErrorTextField(frame: CGRectMake(40, 250, view.bounds.width - 80, 32))
-        emailField.placeholder = "Username"
+    private func prepareUserField() {
+        userField = ErrorTextField(frame: CGRectMake(40, 250, view.bounds.width - 80, 32))
+        userField.placeholder = "Username"
+        userField.text = "admin_user"
 
-        emailField.enableClearIconButton = true
-        emailField.delegate = self
+        userField.enableClearIconButton = true
+        userField.delegate = self
 
-        emailField.placeholderColor = MaterialColor.amber.darken4
-        emailField.placeholderActiveColor = MaterialColor.pink.base
-        emailField.dividerColor = MaterialColor.cyan.base
+        userField.placeholderColor = MaterialColor.amber.darken4
+        userField.placeholderActiveColor = MaterialColor.pink.base
+        userField.dividerColor = MaterialColor.cyan.base
 
-        view.addSubview(emailField)
+        view.addSubview(userField)
     }
 
     /// Prepares the password TextField.
     private func preparePasswordField() {
         passwordField = TextField()
         passwordField.placeholder = "Password"
+        passwordField.text = "admin_pass"
 
         passwordField.clearButtonMode = .WhileEditing
         passwordField.enableVisibilityIconButton = true

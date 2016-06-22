@@ -8,6 +8,7 @@
 
 import Foundation
 import Material
+import ThingIFSDK
 
 final class GatewayViewController : UIViewController{
     private var host : ErrorTextField!
@@ -50,7 +51,14 @@ final class GatewayViewController : UIViewController{
         view.addSubview(host)
 
     }
+    override func viewDidAppear(animated: Bool) {
+        guard let savedIoTAPI = try? ThingIFAPI.loadWithStoredInstance() else {
+            self.performSegueWithIdentifier("showWizard", sender: nil)
+            return
+        }
+        print(savedIoTAPI.debugDescription)
 
+    }
 
 
     /// Prepares the email TextField.

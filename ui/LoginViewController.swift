@@ -8,6 +8,8 @@
 
 import Foundation
 import Material
+import Toast_Swift
+import ThingIFSDK
 
 final class LoginViewController : WizardVC {
     private var signUpSwitch: UISwitch!
@@ -17,6 +19,47 @@ final class LoginViewController : WizardVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Sign in"
+        Manager.SharedManager.nextAction = { [weak self]
+            completion in
+            guard let email = self?.emailField.text else {
+                completion(false)
+                return
+            }
+
+            var style = ToastStyle()
+            style.backgroundColor = MaterialColor.blue.accent2.colorWithAlphaComponent(0.5)
+            if self?.emailField.text! == "" || self?.passwordField.text! == "" {
+                style.messageColor = MaterialColor.red.accent3
+                self?.parentViewController?.view?.makeToast("Invalid Input", duration: 1, position: .Bottom,style: style)
+                completion(false)
+                return
+
+            }
+
+
+            self?.parentViewController?.view?.makeToastActivity(.Center)
+            let userBlock : KiiUserBlock = { (user, error) in
+                self?.parentViewController?.view?.hideToastActivity()
+                let success = error == nil
+                if success {
+                    self?.parentViewController?.view?.makeToast("Sign in Succeded", duration: 1, position: .Bottom,style: style)
+                }else {
+                    style.messageColor = MaterialColor.red.accent3
+                    self?.parentViewController?.view?.makeToast("error \(error!.description)", duration: 1, position: .Bottom,style: style)
+                }
+
+                completion(success)
+            }
+            if (self?.signUpSwitch)!.on {
+                let user = KiiUser(emailAddress: email, andPassword: (self?.passwordField.text)!)
+                user.performRegistrationWithBlock(userBlock)
+            }else {
+                KiiUser.authenticate(email, withPassword: (self?.passwordField.text)!, andBlock: userBlock)
+            }
+
+
+        }
+
         prepareView()
         prepareSwitch()
         prepareEmailField()
@@ -24,6 +67,13 @@ final class LoginViewController : WizardVC {
 
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        Manager.SharedManager.childWillLoadedAction(prevButton: DEFAULT_PREV_BUTTON, nextButton: ButtonProperties(true,"Sign in"))
+    }
+    override func viewWillDisappear(animated: Bool) {
+        Manager.SharedManager.childWillLoadedAction(prevButton: DEFAULT_PREV_BUTTON, nextButton: DEFAULT_NEXT_BUTTON)
+    }
     /// Programmatic update for the textField as it rotates.
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         emailField.width = view.bounds.height - 80
@@ -36,23 +86,24 @@ final class LoginViewController : WizardVC {
 
     /// Prepares the name TextField.
     private func prepareSwitch() {
-
         signUpSwitch = UISwitch()
+        signUpSwitch.on = false
         let placeholder = MaterialView(frame: CGRectMake(40, 240, view.bounds.width - 80, 32))
         let label = MaterialLabel()
         label.text = "New user :"
         placeholder.layout(label).top(5).horizontally(left: 0, right: 40)
         placeholder.layout(signUpSwitch).top(1).horizontally(left: 100, right: 40)
 
-        // Size the TextField to the maximum width, less 40 pixels on either side
-        // with a top margin of 40 pixels.
         view.addSubview(placeholder)
     }
 
     /// Prepares the email TextField.
     private func prepareEmailField() {
+        let email = "owner-thing@kii.com" // "u-\(NSDate().timeIntervalSince1970)@kii.com"
+
         emailField = ErrorTextField(frame: CGRectMake(40, 90, view.bounds.width - 80, 32))
-        emailField.placeholder = "Username/Email"
+        emailField.placeholder = "Email"
+        emailField.text = email
 
         emailField.enableClearIconButton = true
         emailField.delegate = self
@@ -68,7 +119,7 @@ final class LoginViewController : WizardVC {
     private func preparePasswordField() {
         passwordField = TextField()
         passwordField.placeholder = "Password"
-        
+        passwordField.text = "pass"
         passwordField.clearButtonMode = .WhileEditing
         passwordField.enableVisibilityIconButton = true
 
@@ -79,4 +130,15 @@ final class LoginViewController : WizardVC {
         // with a top margin of 200 pixels.
         view.layout(passwordField).top(160).horizontally(left: 40, right: 40)
     }
+
+    // init ThingIFAPI after success to login/register as KiiUser
+    private func initThingIFAPI(ownerID: String, accessToken: String) {
+        let owner = Owner(typedID: TypedID(type: "user", id: ownerID), accessToken: accessToken)
+        let app = AppBuilder(appID: Manager.SharedManager.appID, appKey: Manager.SharedManager.appKey, hostName: Kii.kiiAppsBaseURL()).build()
+        let api = ThingIFAPIBuilder(app: app, owner: owner).build()
+        api.saveInstance()
+
+    }
+
+    
 }

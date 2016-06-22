@@ -7,12 +7,12 @@
 //
 
 import Material
-
+import Toast_Swift
 
 
 final class KiiInitialViewController: WizardVC {
 
-    private var nameField: TextField!
+    private let kiiSiteSegment = UISegmentedControl(items: ["US","JP","CN","SG","CN3"])
     private var appIDField: ErrorTextField!
     private var appKeyField: TextField!
 
@@ -23,13 +23,26 @@ final class KiiInitialViewController: WizardVC {
         prepareKiiSite()
         prepareAppIDField()
         prepareAppKeyField()
+        Manager.SharedManager.nextAction = { [weak self]
+            completion in
+            guard let appID = self?.appIDField.text else {
+                completion(false)
+                return
+            }
+            var style = ToastStyle()
+            style.backgroundColor = MaterialColor.blue.accent2.colorWithAlphaComponent(0.5)
+            if self?.appIDField.text! == "" || self?.appKeyField.text! == "" {
+                style.messageColor = MaterialColor.red.accent3
+                self?.parentViewController?.view?.makeToast("Invalid Input", duration: 1, position: .Bottom,style: style)
+                completion(false)
+                return
+                
+            }
+            Kii.beginWithID(appID, andKey: (self?.appKeyField.text)!, andSite: (self?.getKiiSite())!)
+            self?.parentViewController?.view?.makeToast("OK", duration: 1, position: .Bottom,style: style)
+            completion(true)
+        }
 
-
-    }
-
-    /// Programmatic update for the textField as it rotates.
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        appIDField.width = view.bounds.height - 80
     }
 
     /// General preparation statements.
@@ -44,12 +57,23 @@ final class KiiInitialViewController: WizardVC {
         Manager.SharedManager.childWillLoadedAction(prevButton: DEFAULT_PREV_BUTTON, nextButton: DEFAULT_NEXT_BUTTON)
     }
 
-
-
-
+    private func getKiiSite() -> KiiSite {
+        switch self.kiiSiteSegment.selectedSegmentIndex {
+        case 0:
+            return .US
+        case 1:
+            return .JP
+        case 2:
+            return .CN
+        case 3:
+            return .SG
+        default:
+            return .US
+        }
+    }
     /// Handle the resign responder button.
     internal func handleResignResponderButton() {
-        nameField?.resignFirstResponder()
+
         appIDField?.resignFirstResponder()
         appKeyField?.resignFirstResponder()
 
@@ -62,10 +86,10 @@ final class KiiInitialViewController: WizardVC {
         siteLabel.text = "Kii Site :"
         siteLabel.textAlignment = .Center
         view.layout(siteLabel).top(100).horizontally(left: 40, right: 40)
-        let segment = UISegmentedControl(items: ["US","JP","CN","SG","EU"])
-        segment.selectedSegmentIndex = 1
 
-        view.layout(segment).top(140).horizontally(left: 40, right: 40)
+        kiiSiteSegment.selectedSegmentIndex = 1
+
+        view.layout(kiiSiteSegment).top(140).horizontally(left: 40, right: 40)
     }
 
     /// Prepares the email TextField.
