@@ -8,6 +8,8 @@
 
 import Foundation
 import Material
+import ThingIFSDK
+import Toast_Swift
 
 final class GatewayPasswordViewController : WizardVC {
 
@@ -16,6 +18,55 @@ final class GatewayPasswordViewController : WizardVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Onboard"
+
+        Manager.SharedManager.nextAction = { [weak self]
+            completion in
+            guard let password = self?.passwordField.text else {
+                completion(false)
+                return
+            }
+            guard let gatewayApi = try? GatewayAPI.loadWithStoredInstance() else {
+                completion(false)
+                return
+            }
+
+            guard let thingIfApi = try? ThingIFAPI.loadWithStoredInstance() else {
+                completion(false)
+                return
+            }
+            var style = ToastStyle()
+            style.backgroundColor = MaterialColor.blue.accent2.colorWithAlphaComponent(0.5)
+
+            gatewayApi?.onboardGateway({ (gateway, error) in
+                let success = error == nil
+
+                if !success {
+                    style.messageColor = MaterialColor.red.accent3
+                    self?.parentViewController?.view?.makeToast("error : \(error)", duration: 3, position: .Center,style: style)
+                    completion(false)
+                    return
+                }
+
+                let api = thingIfApi?.copyWithTarget(gateway!)
+                api?.onboard((gateway?.thingID)!, thingPassword: password, completionHandler: { (_, error) in
+                    let success = error == nil
+
+                    if success {
+                        self?.parentViewController?.view?.makeToast("Sign in Succeded", duration: 1, position: .Bottom,style: style)
+                    }else {
+                        style.messageColor = MaterialColor.red.accent3
+                        self?.parentViewController?.view?.makeToast("error \(error)", duration: 3, position: .Center,style: style)
+                    }
+                    
+                    completion(success)
+
+                })
+
+
+            })
+
+
+        }
         prepareView()
         preparePasswordField()
     }

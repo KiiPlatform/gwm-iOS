@@ -8,6 +8,8 @@
 
 import Foundation
 import Material
+import ThingIFSDK
+import Toast_Swift
 
 final class GatewayConnectViewController : WizardVC {
 
@@ -19,6 +21,54 @@ final class GatewayConnectViewController : WizardVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Connect to Gateway"
+
+        Manager.SharedManager.nextAction = { [weak self]
+            completion in
+
+            guard let ipAddress : String = self?.ipField.text else {
+                completion(false)
+                return
+            }
+            guard let port : String = self?.portField.text else {
+                completion(false)
+                return
+            }
+            guard let user : String = self?.userField.text else {
+                completion(false)
+                return
+            }
+            guard let password : String = self?.passwordField.text else {
+                completion(false)
+                return
+            }
+            
+            let app = AppBuilder(appID: Manager.SharedManager.appID, appKey: Manager.SharedManager.appKey, hostName: Kii.kiiAppsBaseURL())
+                .setSiteName("JP").setPort(4001).build()
+
+
+            let api = GatewayAPIBuilder(app: app, address: NSURL(string: "http://\(ipAddress):\(port)")!).build()
+            self?.parentViewController?.view?.makeToastActivity(.Center)
+            var style = ToastStyle()
+            style.backgroundColor = MaterialColor.blue.accent2.colorWithAlphaComponent(0.5)
+            dispatch_async(dispatch_get_main_queue(), {
+                api.login(user, password: password, completionHandler: { (error) in
+                    self?.parentViewController?.view?.hideToastActivity()
+                    let success = error == nil
+
+                    if success {
+                        self?.parentViewController?.view?.makeToast("Sign in Succeded", duration: 1, position: .Bottom,style: style)
+                    }else {
+                        style.messageColor = MaterialColor.red.accent3
+                        self?.parentViewController?.view?.makeToast("error : \(error)", duration: 3, position: .Center,style: style)
+                    }
+                    
+                    completion(success)
+                })
+
+
+            })
+
+        }
         prepareView()
         prepareIPField()
         prepareUserField()
@@ -26,10 +76,7 @@ final class GatewayConnectViewController : WizardVC {
 
     }
 
-    /// Programmatic update for the textField as it rotates.
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        userField.width = view.bounds.height - 80
-    }
+
 
     /// General preparation statements.
     private func prepareView() {
@@ -38,7 +85,7 @@ final class GatewayConnectViewController : WizardVC {
     private func prepareIPField() {
         ipField = ErrorTextField(frame: CGRectMake(40, 90, view.bounds.width - 80, 32))
         ipField.placeholder = "IP Address"
-        ipField.text = "192.168.11.5"
+        ipField.text = "10.5.2.132"
 
         ipField.enableClearIconButton = true
         ipField.delegate = self

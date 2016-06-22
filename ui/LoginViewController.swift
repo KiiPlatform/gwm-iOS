@@ -36,16 +36,18 @@ final class LoginViewController : WizardVC {
 
             }
 
-
             self?.parentViewController?.view?.makeToastActivity(.Center)
             let userBlock : KiiUserBlock = { (user, error) in
                 self?.parentViewController?.view?.hideToastActivity()
                 let success = error == nil
                 if success {
+
                     self?.parentViewController?.view?.makeToast("Sign in Succeded", duration: 1, position: .Bottom,style: style)
+                    self?.initThingIFAPI((user?.userID)!, accessToken: (user?.accessToken)!)
+
                 }else {
                     style.messageColor = MaterialColor.red.accent3
-                    self?.parentViewController?.view?.makeToast("error \(error!.description)", duration: 1, position: .Bottom,style: style)
+                    self?.parentViewController?.view?.makeToast("error \(error!.description)", duration: 3, position: .Center,style: style)
                 }
 
                 completion(success)
@@ -136,6 +138,7 @@ final class LoginViewController : WizardVC {
         let owner = Owner(typedID: TypedID(type: "user", id: ownerID), accessToken: accessToken)
         let app = AppBuilder(appID: Manager.SharedManager.appID, appKey: Manager.SharedManager.appKey, hostName: Kii.kiiAppsBaseURL()).build()
         let api = ThingIFAPIBuilder(app: app, owner: owner).build()
+
         api.saveInstance()
 
     }

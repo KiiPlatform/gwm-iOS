@@ -9,6 +9,7 @@
 import Foundation
 import Material
 import ThingIFSDK
+import Toast_Swift
 
 final class GatewayViewController : UIViewController{
     private var host : ErrorTextField!
@@ -52,11 +53,15 @@ final class GatewayViewController : UIViewController{
 
     }
     override func viewDidAppear(animated: Bool) {
-        guard let savedIoTAPI = try? ThingIFAPI.loadWithStoredInstance() else {
+        self.parentViewController?.view?.makeToastActivity(.Center)
+        defer{
+            self.parentViewController?.view.hideToastActivity()
+        }
+        guard let savedGatewayAPI = try? GatewayAPI.loadWithStoredInstance() else {
             self.performSegueWithIdentifier("showWizard", sender: nil)
             return
         }
-        print(savedIoTAPI.debugDescription)
+        print(savedGatewayAPI.debugDescription)
 
     }
 
