@@ -89,7 +89,7 @@ final class LoginViewController : WizardVC {
     /// Prepares the name TextField.
     private func prepareSwitch() {
         signUpSwitch = UISwitch()
-        signUpSwitch.on = true
+        signUpSwitch.on = false
         let placeholder = MaterialView(frame: CGRectMake(40, 240, view.bounds.width - 80, 32))
         let label = MaterialLabel()
         label.text = "New user :"
@@ -101,7 +101,7 @@ final class LoginViewController : WizardVC {
 
     /// Prepares the email TextField.
     private func prepareEmailField() {
-        let email = "u-\(NSDate().timeIntervalSince1970)@kii.com"
+        let email = "owner@kii.com"
 
         emailField = ErrorTextField(frame: CGRectMake(40, 90, view.bounds.width - 80, 32))
         emailField.placeholder = "Email"

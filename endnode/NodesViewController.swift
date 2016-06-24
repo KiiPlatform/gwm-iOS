@@ -51,6 +51,8 @@ private struct Node {
 
 
 final class NodesViewController: WizardVC {
+    private var savedGateway : Gateway?
+
     private var selectedNodeType = NodeType.Pending
     /// A tableView used to display Bond entries.
     private let tableView: UITableView = UITableView()
@@ -209,6 +211,8 @@ extension NodesViewController: UITableViewDataSource {
 
             return
         }
+        var style = ToastStyle()
+        style.backgroundColor = MaterialColor.blue.accent2.colorWithAlphaComponent(0.5)
 
         let alertController : UIAlertController
         let nodeAction : UIAlertAction
@@ -218,45 +222,58 @@ extension NodesViewController: UITableViewDataSource {
             nodeAction = UIAlertAction(title: "Send", style: .Default) { (_) in
                 let actions : [Dictionary<String, AnyObject>] = [["TurnPower": ["power": true]]]
 
-                let form = CommandForm(schemaName: "schema", schemaVersion: 1, actions: actions)
+                let form = CommandForm(schemaName: "Smart-Light-Demo", schemaVersion: 1, actions: actions)
                 let endNode = node.thingObj as! EndNode
-                //let tApi = api?.copyWithTarget(endNode)
-                api?.postNewCommand(form, completionHandler: { (cmd, error) in
+                let tApi = api?.copyWithTarget(endNode)
+                tApi?.postNewCommand(form, completionHandler: { (cmd, error) in
                     if cmd != nil {
-                        print("")
+                        style.backgroundColor = MaterialColor.blue.darken2.colorWithAlphaComponent(0.7)
+                        self.parentViewController?.view?.makeToast("Command sent", duration: 1, position: .Center,style: style)
                     } else {
-                        print(error)
+                        style.backgroundColor = MaterialColor.red.accent3.colorWithAlphaComponent(0.7)
+                        self.parentViewController?.view?.makeToast("Error :\(error!)", duration: 3, position: .Center,style: style)
                     }
                 })
 
-                
-                
             }
 
             break
         case .Pending:
             let pendingNode = node.thingObj as! PendingEndNode
 
+
             alertController = UIAlertController(title: "Onboard", message: "Vendor Thing ID : \(node.text)", preferredStyle: .Alert)
             nodeAction = UIAlertAction(title: "Onboard", style: .Default) { (_) in
 
+                self.tableView.makeToastActivity(.Center)
+
                 let passwordTextField = alertController.textFields![0] as UITextField
                 let password = passwordTextField.text!
-                api?.onboardEndnodeWithGateway(pendingNode, endnodePassword: password, completionHandler: { (node, error) in
+
+                let tApi = api?.copyWithTarget(self.savedGateway!)
+                tApi?.onboardEndnodeWithGateway(pendingNode, endnodePassword: password, completionHandler: { (node, error) in
+                    self.tableView.hideToastActivity()
+                    let api = try? GatewayAPI.loadWithStoredInstance()
                     if node != nil {
-                        print("")
+                        api!?.notifyOnboardingCompletion(node!, completionHandler: { (_) in
+                            style.backgroundColor = MaterialColor.blue.darken2.colorWithAlphaComponent(0.7)
+                            self.parentViewController?.view?.makeToast("Onboarded", duration: 1, position: .Center,style: style)
+                            self.pendingNodes.removeAtIndex(sender.tag)
+                            let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
+                            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+                            self.tableView.reloadData()
+                        })
                     } else {
-                        print(error)
+                        style.backgroundColor = MaterialColor.red.accent3.colorWithAlphaComponent(0.7)
+                        self.parentViewController?.view?.makeToast("Error :\(error!)", duration: 3, position: .Center,style: style)
                     }
                 })
-                
             }
             alertController.addTextFieldWithConfigurationHandler { (textField) in
                 textField.placeholder = "Password"
                 textField.text = "password"
                 textField.secureTextEntry = true
             }
-
             break
         }
 
@@ -279,6 +296,7 @@ extension NodesViewController {
             return
         }
         savedGatewayAPI?.onboardGateway({ (gateway, error) in
+            self.savedGateway = gateway
 
             savedGatewayAPI?.listOnboardedEndNodes({ (nodes, error) in
                 if let endNodes = nodes as [EndNode]? {

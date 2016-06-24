@@ -49,8 +49,8 @@ final class GatewayPasswordViewController : WizardVC {
                     return
                 }
 
-                let api = thingIfApi?.copyWithTarget(gateway!)
-                api!.onboard((gateway?.thingID)!, thingPassword: password, completionHandler: { (_, error) in
+
+                thingIfApi!.onboard((gateway?.thingID)!, thingPassword: password, completionHandler: { (_, error) in
                     self?.parentViewController?.view?.hideToastActivity()
 
 
@@ -62,7 +62,7 @@ final class GatewayPasswordViewController : WizardVC {
                     }else {
                         switch error! {
                         case .ALREADY_ONBOARDED :
-                            self?.parentViewController?.view?.makeToast("already onboarded", duration: 1, position: .Bottom,style: style)
+                            self?.parentViewController?.view?.makeToast("already onboarded", duration: 3, position: .Bottom,style: style)
                             completion(true)
                             return
                         default :
