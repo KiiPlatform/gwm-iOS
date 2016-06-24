@@ -67,7 +67,7 @@
         <!--Kii Initial View Controller-->
         <scene sceneID="FGf-h2-5zU">
             <objects>
-                <viewController restorationIdentifier="next" id="YBy-CI-rqi" customClass="KiiInitialViewController" customModule="gateway" sceneMemberID="viewController">
+                <viewController restorationIdentifier="next" id="YBy-CI-rqi" customClass="KiiInitialViewController" customModule="endnode" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vKU-Ac-cK0"/>
                         <viewControllerLayoutGuide type="bottom" id="tyw-Wc-M2t"/>

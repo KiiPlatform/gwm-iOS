@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5ECCB0FB9DFCE47984BE9A18 /* Pods_gateway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5CDB66C958B1ECE0967894 /* Pods_gateway.framework */; };
 		70812EA447DCC91540491677 /* Pods_endnode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EC86B6DC94F455EA0FA41A /* Pods_endnode.framework */; };
+		D52598BF1D1B934B00C6E8BF /* KiiInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1581D111CB800BE8CD7 /* KiiInitialViewController.swift */; };
 		D5C5FF7A1D17D13C00A5D300 /* GatewayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C5FF791D17D13C00A5D300 /* GatewayViewController.swift */; };
 		D5C5FF7C1D18CD9B00A5D300 /* NodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C5FF7B1D18CD9B00A5D300 /* NodesViewController.swift */; };
 		D5C5FF7E1D18CFFA00A5D300 /* WizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C5FF7D1D18CFFA00A5D300 /* WizardViewController.swift */; };
@@ -454,6 +455,7 @@
 				D5E1E16C1D12967600BE8CD7 /* GatewayConnectViewController.swift in Sources */,
 				D5E1E1451D10FC7D00BE8CD7 /* Brightness.swift in Sources */,
 				D5E1E1431D10FC7D00BE8CD7 /* ApiBuilder.swift in Sources */,
+				D52598BF1D1B934B00C6E8BF /* KiiInitialViewController.swift in Sources */,
 				D5E1E1661D113B8000BE8CD7 /* Manager.swift in Sources */,
 				D5C5FF7C1D18CD9B00A5D300 /* NodesViewController.swift in Sources */,
 				D5E1E1491D10FC7D00BE8CD7 /* ColorTemprature.swift in Sources */,

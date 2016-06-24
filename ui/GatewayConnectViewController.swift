@@ -10,6 +10,18 @@ import Foundation
 import Material
 import ThingIFSDK
 import Toast_Swift
+extension String
+{
+    func substringFromIndex(index: Int) -> String
+    {
+        if (index < 0 || index > self.characters.count)
+        {
+            print("index \(index) out of bounds")
+            return ""
+        }
+        return self.substringFromIndex(self.startIndex.advancedBy(index))
+    }
+}
 
 final class GatewayConnectViewController : WizardVC {
 
@@ -43,6 +55,7 @@ final class GatewayConnectViewController : WizardVC {
             }
             
             let app = AppBuilder(appID: Manager.SharedManager.appID, appKey: Manager.SharedManager.appKey, hostName: Kii.kiiAppsBaseURL())
+
                 .setSiteName(Manager.SharedManager.appSite).setPort(4001).build()
 
 

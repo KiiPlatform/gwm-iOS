@@ -8,6 +8,7 @@
 
 import Foundation
 import Material
+import ThingIFSDK
 let APP_NAME = "APP_NAME"
 let APP_KEY = "APP_KEY"
 let APP_ID = "APP_ID"
@@ -29,7 +30,7 @@ class Manager {
     lazy var appID : String! = { return NSUserDefaults.standardUserDefaults().stringForKey(APP_ID) }()
     lazy var appKey : String! = { return NSUserDefaults.standardUserDefaults().stringForKey(APP_KEY) }()
     lazy var appSite : String! = { return NSUserDefaults.standardUserDefaults().stringForKey(APP_SITE) }()
-    static let kiiSiteMap : Dictionary <String,KiiSite> = ["US":KiiSite.US,"JP":KiiSite.JP,"CN":.CN,"SG":.SG,"CN3":.CN3]
+    static let kiiSiteMap : Dictionary <String,(KiiSite,Site)> = ["US":(KiiSite.US,Site.US),"JP":(KiiSite.JP,Site.JP),"CN":(KiiSite.CN,Site.CN3),"SG":(KiiSite.SG,Site.SG),"CN3":(KiiSite.CN3,Site.CN3)]
 
     var prevAction : (() -> ()) = { }
     var nextAction : (((Bool) -> ()) -> ()) = { completion in  completion(true)}

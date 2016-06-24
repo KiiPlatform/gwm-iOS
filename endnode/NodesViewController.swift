@@ -8,6 +8,9 @@
 
 import Foundation
 import Material
+import ThingIFSDK
+import Toast_Swift
+
 private let nodeActionlabel = ["On Board","Send"]
 
 
@@ -24,17 +27,42 @@ private struct Node {
     var detail: String
     var image: UIImage?
     var type : NodeType
+    var thingObj : AnyObject
+
+
+    init(pendingNode: PendingEndNode){
+        text = pendingNode.vendorThingID!
+        detail = "stat  : Pending"
+        image = UIImage(named: "cube")?.tintWithColor(MaterialColor.amber.accent1)
+        type = .Pending
+        thingObj = pendingNode
+
+    }
+
+    init(endNode: EndNode){
+        text = endNode.vendorThingID
+        detail = "vendor id  : \(endNode.thingID)"
+        image = UIImage(named: "cube")
+        type = .Onboarded
+        thingObj = endNode
+    }
 }
+
+
 
 final class NodesViewController: WizardVC {
     private var selectedNodeType = NodeType.Pending
     /// A tableView used to display Bond entries.
     private let tableView: UITableView = UITableView()
 
-    private var selectedNodes : [Node] { return self.items.filter{$0.type == self.selectedNodeType}}
+    private var selectedNodes : [Node] {
+        if self.selectedNodeType == .Pending { return pendingNodes} else { return endNodes }
+    }
 
     /// A list of all the Author Bond types.
     private var items: Array<Node> = Array<Node>()
+    private var pendingNodes: Array<Node> = Array<Node>()
+    private var endNodes: Array<Node> = Array<Node>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +80,7 @@ final class NodesViewController: WizardVC {
 
     /// Prepares the items Array.
     private func prepareItems() {
-        items.append(Node(text: "Ligthing 01", detail: "nodes detail", image: UIImage(named: "cube")?.tintWithColor(MaterialColor.blue.base),type:.Onboarded))
-        items.append(Node(text: "Ligthing 02", detail: "nodes detail", image: UIImage(named: "cube")?.tintWithColor(MaterialColor.green.base),type:.Onboarded))
-        items.append(Node(text: "Ligthing 03", detail: "nodes detail", image: UIImage(named: "cube")?.tintWithColor(MaterialColor.pink.base),type:.Pending))
+
 
     }
 
@@ -104,12 +130,39 @@ final class NodesViewController: WizardVC {
         print("pending")
         self.selectedNodeType = .Pending
         self.tableView.reloadData()
+        guard let savedGatewayAPI = try? GatewayAPI.loadWithStoredInstance() else {
+            self.performSegueWithIdentifier("showWizard", sender: nil)
+            return
+        }
+        savedGatewayAPI?.listPendingEndNodes({ (nodes, error) in
+            if let pendingNodes = nodes as [PendingEndNode]? {
+                self.pendingNodes = pendingNodes.map({ (obj) -> Node in
+                    Node(pendingNode: obj)
+                })
+                self.tableView.reloadData()
+
+            }
+        })
     }
 
     @objc private func selectOnboardedNodes(sender: UIButton) {
         print("onboarded")
         self.selectedNodeType = .Onboarded
         self.tableView.reloadData()
+        guard let savedGatewayAPI = try? GatewayAPI.loadWithStoredInstance() else {
+            self.performSegueWithIdentifier("showWizard", sender: nil)
+            return
+        }
+        savedGatewayAPI?.listOnboardedEndNodes({ (nodes, error) in
+            if let endNodes = nodes as [EndNode]? {
+                self.endNodes = endNodes.map({ (obj) -> Node in
+                    Node(endNode: obj)
+                })
+                self.tableView.reloadData()
+
+            }
+        })
+
     }
 }
 
@@ -152,11 +205,104 @@ extension NodesViewController: UITableViewDataSource {
     @objc private func nodeAction(sender: UIButton) {
         let node: Node = self.selectedNodes[sender.tag]
         print(node.text)
+        guard let api = try? ThingIFAPI.loadWithStoredInstance() else {
 
+            return
+        }
+
+        let alertController : UIAlertController
+        let nodeAction : UIAlertAction
+        switch node.type {
+        case .Onboarded:
+            alertController = UIAlertController(title: "Post Command", message: "Post Command to thing", preferredStyle: .Alert)
+            nodeAction = UIAlertAction(title: "Send", style: .Default) { (_) in
+                let actions : [Dictionary<String, AnyObject>] = [["TurnPower": ["power": true]]]
+
+                let form = CommandForm(schemaName: "schema", schemaVersion: 1, actions: actions)
+                let endNode = node.thingObj as! EndNode
+                //let tApi = api?.copyWithTarget(endNode)
+                api?.postNewCommand(form, completionHandler: { (cmd, error) in
+                    if cmd != nil {
+                        print("")
+                    } else {
+                        print(error)
+                    }
+                })
+
+                
+                
+            }
+
+            break
+        case .Pending:
+            let pendingNode = node.thingObj as! PendingEndNode
+
+            alertController = UIAlertController(title: "Onboard", message: "Vendor Thing ID : \(node.text)", preferredStyle: .Alert)
+            nodeAction = UIAlertAction(title: "Onboard", style: .Default) { (_) in
+
+                let passwordTextField = alertController.textFields![0] as UITextField
+                let password = passwordTextField.text!
+                api?.onboardEndnodeWithGateway(pendingNode, endnodePassword: password, completionHandler: { (node, error) in
+                    if node != nil {
+                        print("")
+                    } else {
+                        print(error)
+                    }
+                })
+                
+            }
+            alertController.addTextFieldWithConfigurationHandler { (textField) in
+                textField.placeholder = "Password"
+                textField.text = "password"
+                textField.secureTextEntry = true
+            }
+
+            break
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
+        alertController.addAction(nodeAction)
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true) {
+            // ...
+        }
+    }
+
+}
+
+extension NodesViewController {
+    override func viewDidAppear(animated: Bool) {
+        self.parentViewController?.view?.makeToastActivity(.Center)
+
+        guard let savedGatewayAPI = try? GatewayAPI.loadWithStoredInstance() else {
+            self.performSegueWithIdentifier("showWizard", sender: nil)
+            return
+        }
+        savedGatewayAPI?.onboardGateway({ (gateway, error) in
+
+            savedGatewayAPI?.listOnboardedEndNodes({ (nodes, error) in
+                if let endNodes = nodes as [EndNode]? {
+                    self.endNodes = endNodes.map({ (obj) -> Node in
+                        Node(endNode: obj)
+                    })
+                    self.tableView.reloadData()
+
+                }
+            })
+            savedGatewayAPI?.listPendingEndNodes({ (nodes, error) in
+                if let pendingNodes = nodes as [PendingEndNode]? {
+                    self.pendingNodes = pendingNodes.map({ (obj) -> Node in
+                        Node(pendingNode: obj)
+                    })
+                    self.tableView.reloadData()
+                    self.parentViewController?.view.hideToastActivity()
+                }
+            })
+        })
+        
     }
     
 }
-
 /// UITableViewDelegate methods.
 extension NodesViewController: UITableViewDelegate {
     /// Sets the tableView cell height.

@@ -89,7 +89,7 @@ final class LoginViewController : WizardVC {
     /// Prepares the name TextField.
     private func prepareSwitch() {
         signUpSwitch = UISwitch()
-        signUpSwitch.on = false
+        signUpSwitch.on = true
         let placeholder = MaterialView(frame: CGRectMake(40, 240, view.bounds.width - 80, 32))
         let label = MaterialLabel()
         label.text = "New user :"
@@ -101,7 +101,7 @@ final class LoginViewController : WizardVC {
 
     /// Prepares the email TextField.
     private func prepareEmailField() {
-        let email = "owner-thing@kii.com" // "u-\(NSDate().timeIntervalSince1970)@kii.com"
+        let email = "u-\(NSDate().timeIntervalSince1970)@kii.com"
 
         emailField = ErrorTextField(frame: CGRectMake(40, 90, view.bounds.width - 80, 32))
         emailField.placeholder = "Email"
@@ -136,7 +136,9 @@ final class LoginViewController : WizardVC {
     // init ThingIFAPI after success to login/register as KiiUser
     private func initThingIFAPI(ownerID: String, accessToken: String) {
         let owner = Owner(typedID: TypedID(type: "user", id: ownerID), accessToken: accessToken)
-        let app = AppBuilder(appID: Manager.SharedManager.appID, appKey: Manager.SharedManager.appKey, hostName: Kii.kiiAppsBaseURL()).build()
+        let appSite = Manager.SharedManager.appSite
+        let kiiSite = Manager.kiiSiteMap[appSite]!.1
+        let app = App(appID: Manager.SharedManager.appID, appKey: Manager.SharedManager.appKey, site: kiiSite)
         let api = ThingIFAPIBuilder(app: app, owner: owner).build()
 
         api.saveInstance()
