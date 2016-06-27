@@ -24,18 +24,6 @@
 		D5E1E11F1D10F2B600BE8CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5E1E11D1D10F2B600BE8CD7 /* Main.storyboard */; };
 		D5E1E1211D10F2B600BE8CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5E1E1201D10F2B600BE8CD7 /* Assets.xcassets */; };
 		D5E1E1241D10F2B600BE8CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5E1E1221D10F2B600BE8CD7 /* LaunchScreen.storyboard */; };
-		D5E1E1421D10FC7D00BE8CD7 /* ApiBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E13C1D10FC7D00BE8CD7 /* ApiBuilder.swift */; };
-		D5E1E1431D10FC7D00BE8CD7 /* ApiBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E13C1D10FC7D00BE8CD7 /* ApiBuilder.swift */; };
-		D5E1E1441D10FC7D00BE8CD7 /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E13D1D10FC7D00BE8CD7 /* Brightness.swift */; };
-		D5E1E1451D10FC7D00BE8CD7 /* Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E13D1D10FC7D00BE8CD7 /* Brightness.swift */; };
-		D5E1E1461D10FC7D00BE8CD7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E13E1D10FC7D00BE8CD7 /* Color.swift */; };
-		D5E1E1471D10FC7D00BE8CD7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E13E1D10FC7D00BE8CD7 /* Color.swift */; };
-		D5E1E1481D10FC7D00BE8CD7 /* ColorTemprature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E13F1D10FC7D00BE8CD7 /* ColorTemprature.swift */; };
-		D5E1E1491D10FC7D00BE8CD7 /* ColorTemprature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E13F1D10FC7D00BE8CD7 /* ColorTemprature.swift */; };
-		D5E1E14A1D10FC7D00BE8CD7 /* LightState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1401D10FC7D00BE8CD7 /* LightState.swift */; };
-		D5E1E14B1D10FC7D00BE8CD7 /* LightState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1401D10FC7D00BE8CD7 /* LightState.swift */; };
-		D5E1E14C1D10FC7D00BE8CD7 /* TurnPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1411D10FC7D00BE8CD7 /* TurnPower.swift */; };
-		D5E1E14D1D10FC7D00BE8CD7 /* TurnPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1411D10FC7D00BE8CD7 /* TurnPower.swift */; };
 		D5E1E1591D111CB800BE8CD7 /* KiiInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1581D111CB800BE8CD7 /* KiiInitialViewController.swift */; };
 		D5E1E1651D113B8000BE8CD7 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1641D113B8000BE8CD7 /* Manager.swift */; };
 		D5E1E1661D113B8000BE8CD7 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1E1641D113B8000BE8CD7 /* Manager.swift */; };
@@ -77,12 +65,6 @@
 		D5E1E1231D10F2B600BE8CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5E1E1251D10F2B600BE8CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5E1E13A1D10FC7D00BE8CD7 /* bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bridging-Header.h"; sourceTree = "<group>"; };
-		D5E1E13C1D10FC7D00BE8CD7 /* ApiBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiBuilder.swift; sourceTree = "<group>"; };
-		D5E1E13D1D10FC7D00BE8CD7 /* Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brightness.swift; sourceTree = "<group>"; };
-		D5E1E13E1D10FC7D00BE8CD7 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		D5E1E13F1D10FC7D00BE8CD7 /* ColorTemprature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTemprature.swift; sourceTree = "<group>"; };
-		D5E1E1401D10FC7D00BE8CD7 /* LightState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightState.swift; sourceTree = "<group>"; };
-		D5E1E1411D10FC7D00BE8CD7 /* TurnPower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnPower.swift; sourceTree = "<group>"; };
 		D5E1E1581D111CB800BE8CD7 /* KiiInitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KiiInitialViewController.swift; path = ui/KiiInitialViewController.swift; sourceTree = "<group>"; };
 		D5E1E1641D113B8000BE8CD7 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = core/Manager.swift; sourceTree = "<group>"; };
 		D5E1E1671D123E2F00BE8CD7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ui/LoginViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +113,6 @@
 				D5E1E1631D113B6200BE8CD7 /* core */,
 				D5E1E13A1D10FC7D00BE8CD7 /* bridging-Header.h */,
 				D5E1E1571D11198300BE8CD7 /* ui */,
-				D5E1E13B1D10FC7D00BE8CD7 /* model */,
 				D5E1E1021D10F2A000BE8CD7 /* gateway */,
 				D5E1E1181D10F2B600BE8CD7 /* endnode */,
 				D532251B1D07CB9900486B09 /* Products */,
@@ -173,19 +154,6 @@
 				D5E1E1251D10F2B600BE8CD7 /* Info.plist */,
 			);
 			path = endnode;
-			sourceTree = "<group>";
-		};
-		D5E1E13B1D10FC7D00BE8CD7 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				D5E1E13C1D10FC7D00BE8CD7 /* ApiBuilder.swift */,
-				D5E1E13D1D10FC7D00BE8CD7 /* Brightness.swift */,
-				D5E1E13E1D10FC7D00BE8CD7 /* Color.swift */,
-				D5E1E13F1D10FC7D00BE8CD7 /* ColorTemprature.swift */,
-				D5E1E1401D10FC7D00BE8CD7 /* LightState.swift */,
-				D5E1E1411D10FC7D00BE8CD7 /* TurnPower.swift */,
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		D5E1E1571D11198300BE8CD7 /* ui */ = {
@@ -429,15 +397,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5E1E14C1D10FC7D00BE8CD7 /* TurnPower.swift in Sources */,
-				D5E1E1441D10FC7D00BE8CD7 /* Brightness.swift in Sources */,
 				D5E1E1711D13989C00BE8CD7 /* GatewayPasswordViewController.swift in Sources */,
-				D5E1E1421D10FC7D00BE8CD7 /* ApiBuilder.swift in Sources */,
-				D5E1E1481D10FC7D00BE8CD7 /* ColorTemprature.swift in Sources */,
-				D5E1E14A1D10FC7D00BE8CD7 /* LightState.swift in Sources */,
 				D5E1E1591D111CB800BE8CD7 /* KiiInitialViewController.swift in Sources */,
 				D5C5FF7A1D17D13C00A5D300 /* GatewayViewController.swift in Sources */,
-				D5E1E1461D10FC7D00BE8CD7 /* Color.swift in Sources */,
 				D5E1E16B1D12967600BE8CD7 /* GatewayConnectViewController.swift in Sources */,
 				D5E1E1041D10F2A000BE8CD7 /* AppDelegate.swift in Sources */,
 				D5C5FF7E1D18CFFA00A5D300 /* WizardViewController.swift in Sources */,
@@ -451,18 +413,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E1E1691D123E2F00BE8CD7 /* LoginViewController.swift in Sources */,
-				D5E1E14D1D10FC7D00BE8CD7 /* TurnPower.swift in Sources */,
 				D5E1E16C1D12967600BE8CD7 /* GatewayConnectViewController.swift in Sources */,
-				D5E1E1451D10FC7D00BE8CD7 /* Brightness.swift in Sources */,
-				D5E1E1431D10FC7D00BE8CD7 /* ApiBuilder.swift in Sources */,
 				D52598BF1D1B934B00C6E8BF /* KiiInitialViewController.swift in Sources */,
 				D5E1E1661D113B8000BE8CD7 /* Manager.swift in Sources */,
 				D5C5FF7C1D18CD9B00A5D300 /* NodesViewController.swift in Sources */,
-				D5E1E1491D10FC7D00BE8CD7 /* ColorTemprature.swift in Sources */,
 				D5C5FF7F1D18CFFA00A5D300 /* WizardViewController.swift in Sources */,
-				D5E1E14B1D10FC7D00BE8CD7 /* LightState.swift in Sources */,
 				D5E1E1721D13989C00BE8CD7 /* GatewayPasswordViewController.swift in Sources */,
-				D5E1E1471D10FC7D00BE8CD7 /* Color.swift in Sources */,
 				D5E1E11A1D10F2B600BE8CD7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
