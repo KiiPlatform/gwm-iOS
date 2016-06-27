@@ -16,9 +16,7 @@ final class LoginViewController : WizardVC {
     private var emailField: ErrorTextField!
     private var passwordField: TextField!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "Sign in"
+    override func viewDidAppear(animated: Bool) {
         Manager.SharedManager.nextAction = { [weak self]
             completion in
             guard let email = self?.emailField.text else {
@@ -58,9 +56,14 @@ final class LoginViewController : WizardVC {
             }else {
                 KiiUser.authenticate(email, withPassword: (self?.passwordField.text)!, andBlock: userBlock)
             }
-
-
+            
+            
         }
+
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Sign in"
 
         prepareView()
         prepareSwitch()
@@ -124,6 +127,7 @@ final class LoginViewController : WizardVC {
         passwordField.text = "pass"
         passwordField.clearButtonMode = .WhileEditing
         passwordField.enableVisibilityIconButton = true
+        passwordField.delegate = self
 
         // Setting the visibilityFlatButton color.
         passwordField.visibilityIconButton?.tintColor = MaterialColor.green.base.colorWithAlphaComponent(passwordField.secureTextEntry ? 0.38 : 0.54)

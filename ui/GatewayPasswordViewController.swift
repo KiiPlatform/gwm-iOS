@@ -15,10 +15,7 @@ final class GatewayPasswordViewController : WizardVC {
 
     private var passwordField: TextField!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "Onboard"
-
+    override func viewDidAppear(animated: Bool) {
         Manager.SharedManager.nextAction = { [weak self]
             completion in
             guard let password = self?.passwordField.text else {
@@ -37,7 +34,7 @@ final class GatewayPasswordViewController : WizardVC {
             var style = ToastStyle()
             style.backgroundColor = MaterialColor.blue.accent2.colorWithAlphaComponent(0.5)
             self?.parentViewController?.view?.makeToastActivity(.Center)
-            
+
             gatewayApi?.onboardGateway({ (gateway, error) in
                 let success = error == nil
 
@@ -73,14 +70,20 @@ final class GatewayPasswordViewController : WizardVC {
                     }
                     
                     completion(success)
-
+                    
                 })
-
-
+                
+                
             })
-
+            
 
         }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Onboard"
+
+        
         prepareView()
         preparePasswordField()
     }
@@ -99,5 +102,6 @@ final class GatewayPasswordViewController : WizardVC {
         passwordField.enableVisibilityIconButton = true
         passwordField.visibilityIconButton?.tintColor = MaterialColor.green.base.colorWithAlphaComponent(passwordField.secureTextEntry ? 0.38 : 0.54)
         view.layout(passwordField).top(100).horizontally(left: 40, right: 40)
+        passwordField.delegate = self
     }
 }

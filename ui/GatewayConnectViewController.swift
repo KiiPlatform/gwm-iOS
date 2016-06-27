@@ -34,6 +34,13 @@ final class GatewayConnectViewController : WizardVC {
         super.viewDidLoad()
         self.title = "Connect to Gateway"
 
+        prepareView()
+        prepareIPField()
+        prepareUserField()
+        preparePasswordField()
+
+    }
+    override func viewDidAppear(animated: Bool) {
         Manager.SharedManager.nextAction = { [weak self]
             completion in
 
@@ -53,7 +60,7 @@ final class GatewayConnectViewController : WizardVC {
                 completion(false)
                 return
             }
-            
+
             let app = AppBuilder(appID: Manager.SharedManager.appID, appKey: Manager.SharedManager.appKey, hostName: Kii.kiiAppsBaseURL())
 
                 .setSiteName(Manager.SharedManager.appSite).setPort(4001).build()
@@ -74,19 +81,14 @@ final class GatewayConnectViewController : WizardVC {
                         style.messageColor = MaterialColor.red.accent3
                         self?.parentViewController?.view?.makeToast("error : \(error)", duration: 3, position: .Center,style: style)
                     }
-                    
+
                     completion(success)
                 })
-
-
+                
+                
             })
-
+            
         }
-        prepareView()
-        prepareIPField()
-        prepareUserField()
-        preparePasswordField()
-
     }
 
 
@@ -146,7 +148,7 @@ final class GatewayConnectViewController : WizardVC {
         passwordField = TextField()
         passwordField.placeholder = "Password"
         passwordField.text = "admin_pass"
-
+        passwordField.delegate = self
         passwordField.clearButtonMode = .WhileEditing
         passwordField.enableVisibilityIconButton = true
 

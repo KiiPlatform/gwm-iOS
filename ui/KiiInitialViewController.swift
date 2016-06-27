@@ -23,6 +23,10 @@ final class KiiInitialViewController: WizardVC {
         prepareKiiSite()
         prepareAppIDField()
         prepareAppKeyField()
+
+    }
+
+    override func viewDidAppear(animated: Bool) {
         Manager.SharedManager.nextAction = { [weak self]
             completion in
             guard let appID = self?.appIDField.text else {
@@ -36,7 +40,7 @@ final class KiiInitialViewController: WizardVC {
                 self?.parentViewController?.view?.makeToast("Invalid Input", duration: 1, position: .Bottom,style: style)
                 completion(false)
                 return
-                
+
             }
             Kii.beginWithID(appID, andKey: (self?.appKeyField.text)!, andSite: (self?.getKiiSite())!)
             self?.parentViewController?.view?.makeToast("OK", duration: 1, position: .Bottom,style: style)
@@ -44,7 +48,6 @@ final class KiiInitialViewController: WizardVC {
         }
 
     }
-
     /// General preparation statements.
     private func prepareView() {
         view.backgroundColor = MaterialColor.white
@@ -52,6 +55,7 @@ final class KiiInitialViewController: WizardVC {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         Manager.SharedManager.childWillLoadedAction(prevButton: ButtonProperties(false,nil), nextButton: DEFAULT_NEXT_BUTTON)
+        
     }
     override func viewWillDisappear(animated: Bool) {
         Manager.SharedManager.childWillLoadedAction(prevButton: DEFAULT_PREV_BUTTON, nextButton: DEFAULT_NEXT_BUTTON)
@@ -116,6 +120,7 @@ final class KiiInitialViewController: WizardVC {
         appKeyField.detail = "Your \(Manager.SharedManager.appName) App Key"
         appKeyField.clearButtonMode = .WhileEditing
         appKeyField.enableVisibilityIconButton = true
+        appKeyField.delegate = self
 
         // Setting the visibilityFlatButton color.
         appKeyField.visibilityIconButton?.tintColor = MaterialColor.green.base.colorWithAlphaComponent(appKeyField.secureTextEntry ? 0.38 : 0.54)

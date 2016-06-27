@@ -53,10 +53,10 @@ class WizardVC: UIViewController, TextFieldDelegate {
         Manager.SharedManager.currentVC = self
 
     }
-
-    /// Executed when the 'return' key is pressed when using the emailField.
+        /// Executed when the 'return' key is pressed when using the emailField.
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         (textField as? ErrorTextField)?.revealError = true
+        textField.resignFirstResponder()
         return true
     }
 
