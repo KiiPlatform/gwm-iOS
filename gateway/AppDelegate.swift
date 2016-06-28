@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  gwm-iOS
+//  gateway
 //
-//  Created by syahRiza on 6/8/16.
+//  Created by syahRiza on 6/15/16.
 //  Copyright © 2016 Kii. All rights reserved.
 //
 
@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        NSUserDefaults.standardUserDefaults().setObject("Gateway", forKey: APP_NAME)
+        NSUserDefaults.standardUserDefaults().setObject("<APP_ID>", forKey: APP_ID)//change the placeholder with gateway App Id
+
+        NSUserDefaults.standardUserDefaults().setObject("<APP_KEY>", forKey: APP_KEY)//change the placeholder with End Node App key
+
+        NSUserDefaults.standardUserDefaults().setObject("JP", forKey: APP_SITE)
+        NSUserDefaults.standardUserDefaults().synchronize()
         return true
     }
 
@@ -40,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
 }
 
