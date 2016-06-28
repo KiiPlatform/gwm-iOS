@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         NSUserDefaults.standardUserDefaults().setObject("End Node", forKey: APP_NAME)
-        NSUserDefaults.standardUserDefaults().setObject("75b59c89", forKey: APP_ID)
-        NSUserDefaults.standardUserDefaults().setObject("4b61c84c6dfbaa6f191305f342e6c950", forKey: APP_KEY)
+        NSUserDefaults.standardUserDefaults().setObject("<APP_ID>", forKey: APP_ID)//change the placeholder with End Node App Id
+        NSUserDefaults.standardUserDefaults().setObject("<APP_KEY>", forKey: APP_KEY)//change the placeholder with End Node App Key
         NSUserDefaults.standardUserDefaults().setObject("JP", forKey: APP_SITE)
         NSUserDefaults.standardUserDefaults().synchronize()
         return true
